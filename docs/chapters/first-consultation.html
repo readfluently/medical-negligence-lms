@@ -1,102 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>The First Consultation | Medical Negligence Practitioner Guide</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f5fa;
-            color: #222;
-            line-height: 1.8;
-        }
-
-        header {
-            background: #24113f;
-            color: white;
-            padding: 45px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        article {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        h2 {
-            color: #24113f;
-            margin-top: 40px;
-        }
-
-        h3 {
-            color: #6a2ca0;
-        }
-
-        .principle {
-            background: #f1eafa;
-            border-left: 5px solid #7b3fb6;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 6px;
-        }
-
-        .term {
-            color: #6a2ca0;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        .definition {
-            display: none;
-            background: #faf7ff;
-            border-left: 4px solid #7b3fb6;
-            padding: 18px;
-            margin: 10px 0 20px;
-            border-radius: 6px;
-        }
-
-        .definition a {
-            color: #6a2ca0;
-        }
-
-        .back {
-            display: inline-block;
-            margin-top: 30px;
-            color: #6a2ca0;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/book.css">
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
     <h1>Chapter 1</h1>
     <p>The First Consultation: What You Are Really Trying to Build</p>
 </header>
 
-<main>
+<nav class="book-nav">
+    <div class="book-nav-inner">
+        <a href="../index.html">← Book Home</a>
+        <a href="#legal-concepts">Legal Concepts</a>
+    </div>
+</nav>
 
-<article>
+<main class="book-container">
+
+<article class="book-content">
 
     <h2>The First Consultation</h2>
 
@@ -106,9 +36,10 @@
     </p>
 
     <div class="principle">
-        <strong>Practitioner's principle:</strong><br>
+        <div class="principle-title">Practitioner's Principle</div>
         Investigate the story. Do not decide the case too early.
     </div>
+
 
     <h2>The Case Map</h2>
 
@@ -129,194 +60,681 @@
     </ul>
 
     <p>
-        Around this central sequence sit the records, witnesses, healthcare
-        providers, potential defendants, potential experts, dates and
-        unanswered questions.
+        Around this central sequence sit the records, witnesses,
+        healthcare providers, potential defendants, potential experts,
+        dates and unanswered questions.
     </p>
 
-    <h2>Why Dates Matter</h2>
+
+    <h2 id="legal-concepts">Why Dates Matter</h2>
 
     <p>
         In a medical-negligence case, time may become relevant to:
     </p>
 
     <ul>
+
         <li>
-            <span class="term" onclick="toggleDefinition('chronology')">
+            <span class="legal-term"
+                  onclick="toggleArticle('chronology')">
                 the medical chronology
             </span>
         </li>
 
         <li>
-            <span class="term" onclick="toggleDefinition('decisions')">
+            <span class="legal-term"
+                  onclick="toggleArticle('decisions')">
                 the sequence of clinical decisions
             </span>
         </li>
 
         <li>
-            <span class="term" onclick="toggleDefinition('injury')">
+            <span class="legal-term"
+                  onclick="toggleArticle('injury')">
                 the development of the injury
             </span>
         </li>
 
         <li>
-            <span class="term" onclick="toggleDefinition('causation')">
+            <span class="legal-term"
+                  onclick="toggleArticle('causation')">
                 causation
             </span>
         </li>
 
         <li>
-            <span class="term" onclick="toggleDefinition('prescription')">
+            <span class="legal-term"
+                  onclick="toggleArticle('prescription')">
                 prescription
             </span>
         </li>
 
         <li>
-            <span class="term" onclick="toggleDefinition('notice')">
+            <span class="legal-term"
+                  onclick="toggleArticle('notice')">
                 statutory notice
             </span>
         </li>
 
         <li>
-            <span class="term" onclick="toggleDefinition('procedure')">
+            <span class="legal-term"
+                  onclick="toggleArticle('procedure')">
                 procedural steps
             </span>
         </li>
 
         <li>
-            <span class="term" onclick="toggleDefinition('experts')">
+            <span class="legal-term"
+                  onclick="toggleArticle('experts')">
                 expert opinions
             </span>
         </li>
+
     </ul>
 
-    <!-- DEFINITIONS -->
 
-    <div id="chronology" class="definition">
-        <strong>The medical chronology</strong>
+    <!-- =====================================================
+         MEDICAL CHRONOLOGY
+         ===================================================== -->
+
+    <section id="chronology" class="term-article">
+
+        <h3>The Medical Chronology</h3>
+
+        <h4>Why it matters</h4>
 
         <p>
-            The chronological sequence of the patient's medical history,
-            treatment, consultations, investigations and relevant events.
+            The chronology is the factual spine of the investigation.
+            It should identify what happened, when it happened, who was
+            involved, what information was available at each stage and
+            what happened afterwards.
+        </p>
+
+        <h4>Practitioner questions</h4>
+
+        <ul>
+            <li>When did the relevant symptoms begin?</li>
+            <li>When did the patient first seek treatment?</li>
+            <li>What investigations were performed?</li>
+            <li>What treatment was recommended?</li>
+            <li>When did the alleged complication become apparent?</li>
+            <li>What subsequent treatment occurred?</li>
+        </ul>
+
+        <h4>Evidence to obtain</h4>
+
+        <ul>
+            <li>Clinical records</li>
+            <li>Referral records</li>
+            <li>Investigation results</li>
+            <li>Medication records</li>
+            <li>Operative or procedure notes</li>
+            <li>Subsequent treatment records</li>
+        </ul>
+
+        <div class="principle">
+            A chronology should identify uncertainty as well as certainty.
+            Missing information is itself an investigative finding.
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CLINICAL DECISIONS
+         ===================================================== -->
+
+    <section id="decisions" class="term-article">
+
+        <h3>The Sequence of Clinical Decisions</h3>
+
+        <h4>The investigative question</h4>
+
+        <p>
+            The practitioner should reconstruct the sequence of clinical
+            decisions rather than simply recording the eventual outcome.
         </p>
 
         <p>
-            The chronology helps the practitioner identify what happened,
-            when it happened and what information remains missing.
+            The critical question is what was known or reasonably observable
+            at the relevant point in time and what decision followed from it.
         </p>
-    </div>
 
-    <div id="decisions" class="definition">
-        <strong>The sequence of clinical decisions</strong>
+        <h4>Questions for the file</h4>
+
+        <ul>
+            <li>What information was available to the healthcare provider?</li>
+            <li>What signs or symptoms were recorded?</li>
+            <li>What investigation was ordered or omitted?</li>
+            <li>What treatment decision followed?</li>
+            <li>Was the patient monitored appropriately?</li>
+            <li>What happened immediately afterwards?</li>
+        </ul>
+
+        <div class="principle">
+            Do not assess a clinical decision only with hindsight.
+            Reconstruct the information available when the decision was made.
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DEVELOPMENT OF INJURY
+         ===================================================== -->
+
+    <section id="injury" class="term-article">
+
+        <h3>The Development of the Injury</h3>
+
+        <h4>What must be reconstructed?</h4>
 
         <p>
-            The sequence in which healthcare decisions were made during
-            the patient's treatment.
+            The investigation must distinguish the patient's condition
+            before the relevant medical event from the condition afterwards.
         </p>
 
         <p>
-            The purpose is to understand what was known or observable at
-            each stage and what clinical decision followed.
+            The practitioner should identify the earliest evidence of the
+            alleged injury and trace its development through subsequent
+            treatment and investigation.
         </p>
-    </div>
 
-    <div id="injury" class="definition">
-        <strong>The development of the injury</strong>
+        <h4>Questions</h4>
+
+        <ul>
+            <li>What was the patient's condition before treatment?</li>
+            <li>When was the alleged injury first documented?</li>
+            <li>Was the injury immediate or progressive?</li>
+            <li>What alternative explanations exist?</li>
+            <li>What subsequent treatment affected the condition?</li>
+        </ul>
+
+        <div class="principle">
+            The existence of harm does not, by itself, establish who or what caused it.
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAUSATION
+         ===================================================== -->
+
+    <section id="causation" class="term-article">
+
+        <h3>Causation</h3>
+
+        <h4>Why causation requires separate investigation</h4>
 
         <p>
-            The progression of the patient's condition through the relevant
-            medical events and subsequent treatment.
+            Establishing an alleged departure from proper medical care is
+            not the end of the enquiry. The practitioner must investigate
+            whether the alleged wrongful and negligent conduct caused the
+            loss complained of.
         </p>
-    </div>
-
-    <div id="causation" class="definition">
-        <strong>Causation</strong>
 
         <p>
-            The investigation of the connection between the alleged medical
-            event or departure from proper care and the injury complained of.
+            In <em>AN v MEC for Health, Eastern Cape</em>, the Supreme Court
+            of Appeal dealt directly with factual causation in a medical
+            negligence claim involving failure to monitor a mother and
+            foetus during labour. The court distinguished wrongfulness from
+            factual causation and considered whether the alleged negligent
+            conduct had caused the injury.
         </p>
-    </div>
 
-    <div id="prescription" class="definition">
-        <strong>Prescription</strong>
+        <div class="case-law">
+
+            <div class="case-law-title">
+                <span class="authority">SCA</span>
+                AN v MEC for Health, Eastern Cape
+            </div>
+
+            <p>
+                [2019] ZASCA 102
+            </p>
+
+            <a href="https://www3.saflii.org/za/cases/ZASCA/2019/102.html"
+               target="_blank"
+               rel="noopener">
+                Read the judgment on SAFLII →
+            </a>
+
+        </div>
+
+        <h4>Damage-causing event</h4>
 
         <p>
-            A time-related legal issue concerning whether a claim may still
-            be instituted within the applicable limitation period.
+            In <em>MEC for Health, Western Cape v Q</em>, the SCA considered
+            the plaintiff's burden to prove the damage-causing occurrence
+            and cautioned against reasoning backwards from the existence of
+            injury to negligence.
         </p>
-    </div>
 
-    <div id="notice" class="definition">
-        <strong>Statutory notice</strong>
+        <div class="case-law">
+
+            <div class="case-law-title">
+                <span class="authority">SCA</span>
+                MEC for Health, Western Cape v Q
+            </div>
+
+            <p>
+                [2018] ZASCA 132
+            </p>
+
+            <a href="https://www3.saflii.org/za/cases/ZASCA/2018/132.html"
+               target="_blank"
+               rel="noopener">
+                Read the judgment on SAFLII →
+            </a>
+
+        </div>
+
+        <h4>Practitioner questions</h4>
+
+        <ul>
+            <li>What is the alleged negligent act or omission?</li>
+            <li>What injury is said to have resulted?</li>
+            <li>What alternative causes must be investigated?</li>
+            <li>What medical evidence connects the event to the injury?</li>
+            <li>Is the causal chain supported by contemporaneous records?</li>
+        </ul>
+
+        <div class="principle">
+            Wrongfulness, negligence and causation are related questions,
+            but they should not be collapsed into one enquiry.
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRESCRIPTION
+         ===================================================== -->
+
+    <section id="prescription" class="term-article">
+
+        <h3>Prescription</h3>
+
+        <h4>Why it belongs in the first investigation</h4>
 
         <p>
-            A potentially important procedural requirement where legislation
-            requires notice before legal proceedings are instituted against
-            certain entities.
+            Prescription should not be left until the end of the file.
+            Dates, knowledge and the identity of the relevant debt can
+            become important from the beginning of the investigation.
         </p>
-    </div>
 
-    <div id="procedure" class="definition">
-        <strong>Procedural steps</strong>
+        <h4>Primary authority</h4>
 
         <p>
-            The sequence of steps required to investigate, prepare and
-            potentially institute the claim.
+            <em>Links v MEC for Health, Northern Cape Province</em> is an
+            important Constitutional Court authority concerning prescription
+            in a medical-negligence context.
         </p>
-    </div>
 
-    <div id="experts" class="definition">
-        <strong>Expert opinions</strong>
+        <div class="case-law">
+
+            <div class="case-law-title">
+                <span class="authority">Constitutional Court</span>
+                Links v MEC for Health, Northern Cape Province
+            </div>
+
+            <p>
+                2016 (4) SA 414 (CC)
+            </p>
+
+            <p>
+                The case is concerned with the factual knowledge relevant
+                to when prescription begins to run.
+            </p>
+
+            <a href="https://www.saflii.org/za/cases/ZACC/2016/10.html"
+               target="_blank"
+               rel="noopener">
+                Read the judgment on SAFLII →
+            </a>
+
+        </div>
+
+        <h4>Subsequent authority</h4>
+
+        <div class="case-law">
+
+            <div class="case-law-title">
+                <span class="authority">SCA</span>
+                MEC for Health, Western Cape v M C
+            </div>
+
+            <p>
+                [2020] ZASCA 165
+            </p>
+
+            <p>
+                The SCA considered the relationship between knowledge of
+                primary facts and the commencement of prescription in a
+                medical-negligence claim.
+            </p>
+
+            <a href="https://www3.saflii.org/za/cases/ZASCA/2020/165.html"
+               target="_blank"
+               rel="noopener">
+                Read the judgment on SAFLII →
+            </a>
+
+        </div>
+
+        <h4>Practitioner questions</h4>
+
+        <ul>
+            <li>When did the relevant debt become due?</li>
+            <li>What material facts were known?</li>
+            <li>When were those facts known?</li>
+            <li>When could they reasonably have been known?</li>
+            <li>Was there interruption or delay recognised by law?</li>
+            <li>Is the claim against an organ of state?</li>
+        </ul>
+
+        <div class="principle">
+            Prescription analysis should be based on the applicable statutory
+            framework and the established facts, not simply the date on which
+            the client says they discovered negligence.
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATUTORY NOTICE
+         ===================================================== -->
+
+    <section id="notice" class="term-article">
+
+        <h3>Statutory Notice</h3>
+
+        <h4>When it becomes relevant</h4>
 
         <p>
-            Specialist opinions used to address questions that require
-            specialised knowledge, including questions concerning clinical
-            standards, departure and causation.
+            Claims involving organs of state require early attention to
+            statutory notice requirements.
         </p>
-    </div>
+
+        <p>
+            The Institution of Legal Proceedings against Certain Organs of
+            State Act 40 of 2002 regulates notice requirements for certain
+            proceedings against organs of state.
+        </p>
+
+        <div class="case-law">
+
+            <div class="case-law-title">
+                <span class="authority">Legislation</span>
+                Institution of Legal Proceedings against Certain Organs of State Act 40 of 2002
+            </div>
+
+            <p>
+                Consult the current consolidated text when assessing a live matter.
+            </p>
+
+            <a href="https://www.saflii.org/za/legis/consol_act/iolpacoosa40609/"
+               target="_blank"
+               rel="noopener">
+                Read the Act on SAFLII →
+            </a>
+
+        </div>
+
+        <h4>Notice investigation</h4>
+
+        <ul>
+            <li>Identify the correct defendant.</li>
+            <li>Determine whether it falls within the statutory framework.</li>
+            <li>Identify when the debt became due.</li>
+            <li>Check whether notice was given.</li>
+            <li>Check when and how notice was served.</li>
+            <li>Preserve proof of service.</li>
+            <li>Investigate any possible condonation issue immediately.</li>
+        </ul>
+
+        <h4>Recent authority</h4>
+
+        <div class="case-law">
+
+            <div class="case-law-title">
+                <span class="authority">High Court</span>
+                Badenhorst and Others v MEC for Health, North West Province
+            </div>
+
+            <p>
+                [2026] ZANWHC 168
+            </p>
+
+            <p>
+                The judgment considers statutory notice and prescription
+                issues and refers to authorities including <em>Links</em>,
+                <em>Loni</em> and <em>Madinda</em>.
+            </p>
+
+            <a href="https://www3.saflii.org/za/cases/ZANWHC/2026/168.html"
+               target="_blank"
+               rel="noopener">
+                Read the judgment on SAFLII →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROCEDURAL STEPS
+         ===================================================== -->
+
+    <section id="procedure" class="term-article">
+
+        <h3>Procedural Steps</h3>
+
+        <h4>Build the procedural map early</h4>
+
+        <p>
+            The practitioner should identify the procedural requirements
+            alongside the factual and medical investigation.
+        </p>
+
+        <ul>
+            <li>Obtain complete records.</li>
+            <li>Construct the chronology.</li>
+            <li>Identify healthcare providers.</li>
+            <li>Identify potential defendants.</li>
+            <li>Identify outstanding records.</li>
+            <li>Identify witnesses.</li>
+            <li>Identify expert questions.</li>
+            <li>Investigate prescription.</li>
+            <li>Investigate statutory notice.</li>
+            <li>Preserve relevant evidence.</li>
+        </ul>
+
+        <div class="principle">
+            Procedure should be mapped alongside the investigation,
+            not after the investigation has supposedly finished.
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPERT OPINIONS
+         ===================================================== -->
+
+    <section id="experts" class="term-article">
+
+        <h3>Expert Opinions</h3>
+
+        <h4>Start with the question</h4>
+
+        <p>
+            Expert selection should begin with the specialised question
+            that must be answered, rather than simply selecting a medical
+            specialty.
+        </p>
+
+        <h4>Examples of questions</h4>
+
+        <ul>
+            <li>What was the appropriate clinical response?</li>
+            <li>Was the relevant investigation indicated?</li>
+            <li>Was the treatment appropriate?</li>
+            <li>Was there a departure from the applicable standard?</li>
+            <li>What caused the injury?</li>
+            <li>Could another mechanism explain the injury?</li>
+        </ul>
+
+        <h4>Important authority</h4>
+
+        <div class="case-law">
+
+            <div class="case-law-title">
+                <span class="authority">SCA</span>
+                MEC for Health, Western Cape v Q
+            </div>
+
+            <p>
+                [2018] ZASCA 132
+            </p>
+
+            <p>
+                The SCA considered the logical basis and probative value of
+                expert opinion in a medical-negligence dispute.
+            </p>
+
+            <a href="https://www3.saflii.org/za/cases/ZASCA/2018/132.html"
+               target="_blank"
+               rel="noopener">
+                Read the judgment on SAFLII →
+            </a>
+
+        </div>
+
+        <div class="principle">
+            Do not begin by asking, “Which expert do we need?”
+            Begin by asking, “What specialised question must be answered?”
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRACTITIONER'S TEST
+         ===================================================== -->
 
     <h2>The Practitioner's Test</h2>
 
     <p>
-        Before deciding whether a case has merit, the practitioner should
-        continue investigating the relevant questions:
+        Before deciding whether a case has merit, continue investigating:
     </p>
 
-    <ul>
-        <li>What was the applicable standard of care?</li>
-        <li>Was there a departure from that standard?</li>
-        <li>Is there a question of wrongfulness?</li>
-        <li>Is there a question of negligence?</li>
-        <li>Can causation be established?</li>
-        <li>What loss is alleged?</li>
-    </ul>
+    <div class="checklist">
 
-    <div class="principle">
-        <strong>Closing principle:</strong><br>
-        The first consultation should produce a structured investigation,
-        not a premature conclusion.
+        <label>
+            <input type="checkbox">
+            What was the applicable standard of care?
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Was there a departure from that standard?
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Is there a question of wrongfulness?
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Is there a question of negligence?
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Can causation be established?
+        </label>
+
+        <label>
+            <input type="checkbox">
+            What loss is alleged?
+        </label>
+
     </div>
 
-    <a class="back" href="../index.html">
-        ← Back to the Book
-    </a>
+
+    <div class="principle">
+
+        <div class="principle-title">
+            Closing Principle
+        </div>
+
+        The first consultation should produce a structured investigation,
+        not a premature conclusion.
+
+    </div>
+
+
+    <div class="research-note">
+
+        <strong>Research note:</strong>
+        The expandable legal articles are intended as practitioner research
+        aids. Case law and legislation should always be checked against the
+        current authoritative text before being relied upon in a live matter.
+
+    </div>
+
+
+    <div class="chapter-navigation">
+
+        <a href="../index.html">
+            ← Book Home
+        </a>
+
+        <a href="medical-chronology.html">
+            Next: Medical Chronology →
+        </a>
+
+    </div>
 
 </article>
 
 </main>
 
-<script>
-    function toggleDefinition(id) {
-        const element = document.getElementById(id);
 
-        if (element.style.display === "block") {
-            element.style.display = "none";
-        } else {
-            element.style.display = "block";
-        }
+<footer class="site-footer">
+
+    Medical Negligence Practitioner Guide
+
+</footer>
+
+
+<script>
+
+function toggleArticle(id) {
+
+    const article = document.getElementById(id);
+
+    if (!article) {
+        return;
     }
+
+    article.classList.toggle("open");
+
+    if (article.classList.contains("open")) {
+        article.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    }
+}
+
 </script>
 
 </body>
+
 </html>
