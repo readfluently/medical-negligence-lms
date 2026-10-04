@@ -9,17 +9,64 @@
   <link rel="stylesheet" href="../css/book.css">
 
   <style>
+    /* Interactive heading buttons */
+    .interactive-heading {
+      display: block;
+      width: 100%;
+      margin: 28px 0 10px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #6f42c1;
+      font: inherit;
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .interactive-heading:hover,
+    .interactive-heading:focus {
+      color: #4f267f;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .interactive-heading::after {
+      content: " +";
+      font-weight: 400;
+    }
+
+    .interactive-heading[aria-expanded="true"]::after {
+      content: " −";
+    }
+
+    /* Expandable articles */
+    .expandable-article {
+      margin: 10px 0 28px;
+      padding: 20px;
+      background: #faf7ff;
+      border: 1px solid #dfc8f5;
+      border-left: 4px solid #6f42c1;
+      border-radius: 9px;
+    }
+
+    .expandable-article[hidden] {
+      display: none;
+    }
+
+    .expandable-article h3 {
+      margin-top: 0;
+      color: #5a2d91;
+    }
+
     .expert-box {
       margin: 24px 0;
       padding: 20px;
       border-left: 4px solid #6f42c1;
       background: #faf7ff;
       border-radius: 8px;
-    }
-
-    .expert-box p:last-child,
-    .expert-box ul:last-child {
-      margin-bottom: 0;
     }
 
     .question-box {
@@ -67,12 +114,19 @@
       border-radius: 8px;
     }
 
-    .concept-box p {
-      margin-bottom: 10px;
+    .concept-box .legal-term {
+      margin-bottom: 8px;
     }
 
-    .reveal {
-      margin-top: 12px;
+    .legal-term {
+      color: #6f42c1;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .legal-term:hover,
+    .legal-term:focus {
+      color: #4f267f;
     }
 
     details {
@@ -103,6 +157,14 @@
     th {
       font-weight: 700;
     }
+
+    .chapter-navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 
@@ -110,13 +172,19 @@
 
 <header class="site-header">
   <div class="site-header-inner">
+
     <div class="site-title">
-      <a href="../index.html">The Medical Negligence Practitioner</a>
+      <a href="../index.html">
+        The Medical Negligence Practitioner
+      </a>
     </div>
 
     <nav class="site-nav">
-      <a href="../index.html">Book Home</a>
+      <a href="../index.html">
+        Book Home
+      </a>
     </nav>
+
   </div>
 </header>
 
@@ -127,21 +195,22 @@
 
     <p class="intro">
       Expert evidence is often where a medical-negligence investigation moves
-      from the patient's story and medical records into the specialised
-      questions that ultimately have to be proved.
+      from the patient's story and medical records into specialised questions
+      that ultimately have to be proved.
     </p>
 
     <div class="principle">
       <strong>Practitioner's principle:</strong>
-      Do not begin by asking, “Which expert should I appoint?”
-      Begin by asking, <strong>“What proposition requires specialised knowledge?”</strong>
+      Do not begin by asking,
+      <strong>“Which expert should I appoint?”</strong>
+      Begin by asking,
+      <strong>“What proposition requires specialised knowledge?”</strong>
     </div>
 
     <p>
-      The source manuscript treats expert selection as a later stage of the
-      investigation. At the first consultation, the practitioner should
-      identify potential areas of expertise rather than immediately commission
-      opinions. The questions come first; the expert comes second.
+      The practitioner should identify the question before selecting the expert.
+      At the first consultation, this means identifying potential areas of
+      expertise rather than immediately commissioning reports.
     </p>
 
     <div class="map">
@@ -162,16 +231,11 @@
 
     <hr class="article-divider">
 
-    <h2>1. Start With the Question, Not the Specialty</h2>
+    <h2>Start With the Question</h2>
 
     <p>
-      One of the most important practical disciplines in a medical-negligence
-      matter is to identify precisely what specialised question needs to be
-      answered.
-    </p>
-
-    <p>
-      The manuscript gives examples such as:
+      The expert process should begin with a precise question rather than a
+      generic request for “a medical opinion”.
     </p>
 
     <div class="question-box">
@@ -183,16 +247,25 @@
       <p>What is the patient's present prognosis?</p>
     </div>
 
-    <button class="legal-term" onclick="toggleArticle('specialised-question')">
-      Question requiring specialised knowledge
+    <!-- 1 -->
+
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-1', this)"
+      aria-expanded="false"
+      aria-controls="article-1">
+      1. The Question Requiring Specialised Knowledge
     </button>
 
-    <div id="specialised-question" class="term-article" hidden>
-      <h3>Question requiring specialised knowledge</h3>
+    <div id="article-1"
+         class="expandable-article"
+         hidden>
+
+      <h3>The Question Requiring Specialised Knowledge</h3>
 
       <p>
-        The starting point should be the proposition that cannot responsibly be
-        answered through ordinary legal analysis alone.
+        The starting point is the proposition that cannot responsibly be answered
+        through ordinary legal analysis alone.
       </p>
 
       <p>
@@ -201,8 +274,8 @@
       </p>
 
       <p>
-        For example, “Was the doctor negligent?” may be too broad as an
-        instruction. More useful questions may include:
+        “Was the doctor negligent?” may be too broad as an instruction.
+        More useful questions may include:
       </p>
 
       <ul>
@@ -215,34 +288,41 @@
       </ul>
 
       <p>
-        Once the specialised proposition is identified, the practitioner can
-        determine which discipline is capable of addressing it.
+        Once the specialised proposition has been identified, the practitioner
+        can determine which discipline is capable of addressing it.
       </p>
 
       <p class="case-law">
         See
         <a href="https://www.saflii.org/za/cases/ZASCA/2001/12.html"
-           target="_blank" rel="noopener">
-          <strong>Michael and Another v Linksfield Park Clinic (Pty) Ltd and Another
-          [2001] ZASCA 12</strong>
+           target="_blank"
+           rel="noopener">
+          <strong>Michael and Another v Linksfield Park Clinic (Pty) Ltd and
+          Another [2001] ZASCA 12</strong>
         </a>
-        on the evaluation of expert opinions and the need for logical reasoning.
+        on the evaluation of expert opinions and logical reasoning.
       </p>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 2 -->
 
-    <h2>2. Potential Expert</h2>
-
-    <button class="legal-term" onclick="toggleArticle('potential-expert')">
-      Potential expert
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-2', this)"
+      aria-expanded="false"
+      aria-controls="article-2">
+      2. Potential Expert
     </button>
 
-    <div id="potential-expert" class="term-article" hidden>
-      <h3>Potential expert</h3>
+    <div id="article-2"
+         class="expandable-article"
+         hidden>
+
+      <h3>Potential Expert</h3>
 
       <p>
-        A potential expert is not simply a medical practitioner whose title
+        A potential expert is not simply a medical practitioner whose specialty
         appears relevant to the case.
       </p>
 
@@ -252,13 +332,13 @@
       </p>
 
       <p>
-        For example, neurological injury following surgery may involve several
-        distinct questions:
+        Consider neurological injury following surgery. The case may generate
+        several distinct questions:
       </p>
 
       <ul>
         <li>What happened during the operation?</li>
-        <li>Was the anaesthetic management appropriate?</li>
+        <li>Was anaesthetic management appropriate?</li>
         <li>What neurological injury occurred?</li>
         <li>When did the injury probably occur?</li>
         <li>Could earlier intervention have prevented or reduced it?</li>
@@ -266,88 +346,84 @@
       </ul>
 
       <p>
-        Those questions may not all belong to one expert. The appropriate expert
-        team depends upon the propositions that must be established.
+        Those questions may not all belong to one expert.
       </p>
 
       <p>
-        At the first consultation, the practitioner is therefore identifying
-        possible areas of expertise rather than automatically commissioning
-        reports.
+        The appropriate expert or expert team depends upon the propositions that
+        must be established.
       </p>
+
+      <div class="expert-box">
+        <strong>Practitioner question:</strong>
+        <p>
+          Before choosing an expert, write down the exact proposition that
+          expert must address.
+        </p>
+      </div>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 3 -->
 
-    <h2>3. Expert Evidence Is Not the Case</h2>
-
-    <p>
-      An expert assists the court. The expert does not decide the litigation.
-    </p>
-
-    <p>
-      This distinction is fundamental. A practitioner should therefore be
-      cautious when an expert report appears to contain conclusions such as
-      “the defendant was negligent” without properly explaining the medical
-      facts, professional standard and reasoning that support the opinion.
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('expert-evidence')">
-      Expert evidence
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-3', this)"
+      aria-expanded="false"
+      aria-controls="article-3">
+      3. Expert Evidence
     </button>
 
-    <div id="expert-evidence" class="term-article" hidden>
-      <h3>Expert evidence</h3>
+    <div id="article-3"
+         class="expandable-article"
+         hidden>
+
+      <h3>Expert Evidence</h3>
 
       <p>
-        Expert evidence is evidence intended to assist the court on matters
-        requiring specialised knowledge outside ordinary judicial experience.
+        Expert evidence is intended to assist the court on matters requiring
+        specialised knowledge outside ordinary judicial experience.
       </p>
 
       <p>
-        The Supreme Court of Appeal in
+        An expert does not decide the litigation. The court remains responsible
+        for evaluating the evidence and reaching the legal conclusion.
+      </p>
+
+      <p>
+        In
         <a href="https://www.saflii.org/za/cases/ZASCA/2001/12.html"
-           target="_blank" rel="noopener">
-          <strong>Michael and Another v Linksfield Park Clinic (Pty) Ltd and
-          Another [2001] ZASCA 12</strong>
-        </a>
-        held that the court must evaluate whether expert opinions are founded
-        on logical reasoning.
-      </p>
-
-      <p>
-        The court is therefore not required simply to choose whichever expert
-        sounds more persuasive. The reasoning, factual foundation and logic
-        of the opinion must be examined.
+           target="_blank"
+           rel="noopener">
+          <strong>Michael v Linksfield Park Clinic</strong>
+        </a>,
+        the Supreme Court of Appeal emphasised the importance of evaluating
+        the reasoning underlying competing expert opinions.
       </p>
 
       <p class="authority">
         <strong>Key proposition:</strong>
-        An expert opinion must have a logical basis and be capable of providing
-        genuine assistance to the court.
+        The court does not merely choose the expert who sounds more convincing.
+        It evaluates the factual foundation and logic of the competing opinions.
       </p>
 
-      <p class="case-law">
-        See also
-        <a href="https://www3.saflii.org/za/cases/ZASCA/2018/118.html"
-           target="_blank" rel="noopener">
-          <strong>Life Healthcare Group (Pty) Ltd v Suliman [2018] ZASCA 118</strong>
-        </a>,
-        which reaffirmed that the ultimate evaluation of expert opinion is for
-        the court.
-      </p>
     </div>
 
-    <hr class="article-divider">
+    <!-- 4 -->
 
-    <h2>4. Independence and Objectivity</h2>
-
-    <button class="legal-term" onclick="toggleArticle('objectivity')">
-      Expert independence and objectivity
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-4', this)"
+      aria-expanded="false"
+      aria-controls="article-4">
+      4. Expert Independence and Objectivity
     </button>
 
-    <div id="objectivity" class="term-article" hidden>
-      <h3>Expert independence and objectivity</h3>
+    <div id="article-4"
+         class="expandable-article"
+         hidden>
+
+      <h3>Expert Independence and Objectivity</h3>
 
       <p>
         An expert may be instructed by one of the parties, but that does not
@@ -355,103 +431,99 @@
       </p>
 
       <p>
-        The expert should provide an objective and unbiased opinion based upon
-        specialised knowledge and the available evidence.
+        The expert should provide an objective opinion based upon the
+        specialised knowledge of the expert and the available material.
       </p>
 
       <p>
         In
         <a href="https://www.saflii.org/za/cases/ZAWCHC/2010/3.html"
-           target="_blank" rel="noopener">
-          <strong>Schneider NO and Others v Aspeling and Another [2010] ZAWCHC 3</strong>
+           target="_blank"
+           rel="noopener">
+          <strong>Schneider NO and Others v Aspeling and Another
+          [2010] ZAWCHC 3</strong>
         </a>,
-        the court stressed that an expert must remain objective, identify
-        matters outside the expert's expertise and disclose when the opinion is
-        provisional because insufficient information is available.
+        the court dealt extensively with the responsibilities of an expert
+        witness, including independence, objectivity and identification of
+        the factual basis of the opinion.
       </p>
 
-      <p>
-        This is especially important in medical-negligence litigation where the
-        expert may be dealing with incomplete records or disputed factual
-        assumptions.
-      </p>
-
-      <p class="authority">
+      <div class="expert-box">
         <strong>Practitioner test:</strong>
-        Ask whether the report would still appear professionally defensible if
-        it were being read by the opposing party.
-      </p>
+        <p>
+          Would the report remain professionally defensible if it were read by
+          the opposing party?
+        </p>
+      </div>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 5 -->
 
-    <h2>5. The Factual Foundation of the Opinion</h2>
-
-    <p>
-      A sophisticated medical opinion cannot repair an unreliable factual
-      foundation.
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('factual-basis')">
-      Factual basis
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-5', this)"
+      aria-expanded="false"
+      aria-controls="article-5">
+      5. Factual Basis
     </button>
 
-    <div id="factual-basis" class="term-article" hidden>
-      <h3>Factual basis</h3>
+    <div id="article-5"
+         class="expandable-article"
+         hidden>
+
+      <h3>Factual Basis</h3>
 
       <p>
-        The factual basis of an expert opinion consists of the records,
-        information, assumptions and other evidence from which the expert's
-        reasoning proceeds.
+        An expert's conclusion depends upon the facts, records and assumptions
+        from which the reasoning begins.
       </p>
 
       <p>
-        The practitioner should therefore ask:
+        The practitioner should ask:
       </p>
 
       <ul>
         <li>What records did the expert receive?</li>
         <li>Which facts did the expert assume?</li>
-        <li>Which facts were actually established?</li>
-        <li>Are any important records missing?</li>
+        <li>Which facts are actually established?</li>
+        <li>Are important records missing?</li>
         <li>Does the expert distinguish fact from assumption?</li>
-        <li>Does the opinion change depending on disputed facts?</li>
+        <li>Would the opinion change if a disputed fact were resolved differently?</li>
       </ul>
 
       <p>
-        The Supreme Court of Appeal has repeatedly emphasised that the reasoning
-        behind an expert opinion must be disclosed so that the court can test
-        it.
+        In
+        <a href="https://www3.saflii.org/za/cases/ZASCA/2018/52.html"
+           target="_blank"
+           rel="noopener">
+          <strong>Bee v Road Accident Fund [2018] ZASCA 52</strong>
+        </a>,
+        the Supreme Court of Appeal addressed the importance of the reasoning
+        and foundation underlying expert evidence.
       </p>
 
-      <p class="case-law">
-        See
-        <a href="https://www3.saflii.org/za/cases/ZASCA/2018/52.html"
-           target="_blank" rel="noopener">
-          <strong>Bee v Road Accident Fund [2018] ZASCA 52</strong>
-        </a>
-        and
-        <a href="https://www3.saflii.org/za/cases/ZASCA/2001/12.html"
-           target="_blank" rel="noopener">
-          <strong>Michael v Linksfield Park Clinic</strong>
-        </a>.
-      </p>
     </div>
 
-    <hr class="article-divider">
+    <!-- 6 -->
 
-    <h2>6. Standard of Care</h2>
-
-    <button class="legal-term" onclick="toggleArticle('standard-of-care')">
-      Standard of care
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-6', this)"
+      aria-expanded="false"
+      aria-controls="article-6">
+      6. Standard of Care
     </button>
 
-    <div id="standard-of-care" class="term-article" hidden>
-      <h3>Standard of care</h3>
+    <div id="article-6"
+         class="expandable-article"
+         hidden>
+
+      <h3>Standard of Care</h3>
 
       <p>
         The standard of care asks what level of skill and care could reasonably
-        be expected of a practitioner in the relevant circumstances and field.
+        be expected in the relevant circumstances and professional field.
       </p>
 
       <p>
@@ -460,111 +532,106 @@
       </p>
 
       <p>
-        The useful opinion should explain:
+        The opinion should explain:
       </p>
 
       <ul>
-        <li>what clinical circumstances existed;</li>
-        <li>what options were reasonably available;</li>
-        <li>what risks and benefits were involved;</li>
+        <li>the clinical circumstances;</li>
+        <li>the available options;</li>
+        <li>the relevant risks and benefits;</li>
         <li>what a reasonably competent practitioner would have considered;</li>
-        <li>what was actually done; and</li>
+        <li>what actually occurred; and</li>
         <li>why the conduct did or did not fall below the relevant standard.</li>
       </ul>
 
       <p class="case-law">
-        The Linksfield approach remains central:
+        The approach in
         <a href="https://www.saflii.org/za/cases/ZASCA/2001/12.html"
-           target="_blank" rel="noopener">
+           target="_blank"
+           rel="noopener">
           <strong>Michael v Linksfield Park Clinic</strong>
-        </a>.
+        </a>
+        remains central to the evaluation of expert opinion in medical
+        negligence litigation.
       </p>
 
-      <p class="case-law">
-        See also
-        <a href="https://www3.saflii.org/za/cases/ZAWCHC/2025/183.html"
-           target="_blank" rel="noopener">
-          <strong>Cheminais v Crane [2025] ZAWCHC 183</strong>
-        </a>
-        on logical reasoning and defensible expert opinion.
-      </p>
     </div>
 
-    <hr class="article-divider">
+    <!-- 7 -->
 
-    <h2>7. Expert Evidence on Causation</h2>
-
-    <button class="legal-term" onclick="toggleArticle('expert-causation')">
-      Expert evidence on causation
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-7', this)"
+      aria-expanded="false"
+      aria-controls="article-7">
+      7. Expert Evidence on Causation
     </button>
 
-    <div id="expert-causation" class="term-article" hidden>
-      <h3>Expert evidence on causation</h3>
+    <div id="article-7"
+         class="expandable-article"
+         hidden>
+
+      <h3>Expert Evidence on Causation</h3>
 
       <p>
-        An expert who is well placed to discuss diagnosis or treatment may not
-        necessarily be the expert best placed to address every causation issue.
+        An expert who is well placed to discuss treatment may not necessarily
+        be the person best placed to answer every causation question.
       </p>
 
       <p>
-        The practitioner should separate:
+        Separate questions may include:
       </p>
 
       <ul>
-        <li>what caused the injury;</li>
-        <li>when the injury probably occurred;</li>
-        <li>whether the alleged breach contributed to the injury;</li>
-        <li>whether another cause better explains the outcome; and</li>
-        <li>whether earlier treatment would probably have changed the outcome.</li>
+        <li>What caused the injury?</li>
+        <li>When did the injury probably occur?</li>
+        <li>Did the alleged breach contribute to the injury?</li>
+        <li>Was there another probable cause?</li>
+        <li>Would earlier treatment probably have changed the outcome?</li>
       </ul>
 
       <p>
-        These propositions may require different disciplines.
+        The practitioner must therefore identify exactly which causation
+        proposition requires specialised evidence.
       </p>
 
       <p class="case-law">
         See
         <a href="https://www.saflii.org/za/cases/ZACC/2015/33.html"
-           target="_blank" rel="noopener">
+           target="_blank"
+           rel="noopener">
           <strong>Oppelt v Head: Health, Department of Health Provincial
           Administration: Western Cape [2015] ZACC 33</strong>
         </a>
-        for important Constitutional Court discussion of medical negligence,
-        expert evidence and causation.
+        concerning medical negligence, expert evidence and causation.
       </p>
 
-      <p class="authority">
-        <strong>Practitioner warning:</strong>
-        Do not ask an expert only whether the defendant was negligent. Ask the
-        expert to identify the medical proposition that allows the court to
-        address that issue.
-      </p>
     </div>
 
-    <hr class="article-divider">
+    <!-- 8 -->
 
-    <h2>8. Drafting the Instruction to the Expert</h2>
-
-    <p>
-      The instruction letter forms part of the architecture of the evidence.
-      A vague instruction is likely to produce a vague report.
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('expert-instruction')">
-      Expert instruction
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-8', this)"
+      aria-expanded="false"
+      aria-controls="article-8">
+      8. Expert Instruction
     </button>
 
-    <div id="expert-instruction" class="term-article" hidden>
-      <h3>Expert instruction</h3>
+    <div id="article-8"
+         class="expandable-article"
+         hidden>
+
+      <h3>Expert Instruction</h3>
 
       <p>
-        A proper instruction should identify the relevant factual history,
-        records supplied and questions requiring specialised opinion without
-        dictating the answer.
+        A vague instruction is likely to produce a vague report.
       </p>
 
       <p>
-        A useful instruction may ask:
+        The instruction should identify the clinical history, relevant records
+        and questions requiring specialised opinion without dictating the
+        answer.
       </p>
 
       <div class="question-box">
@@ -577,11 +644,11 @@
         </p>
 
         <p>
-          Was referral to another practitioner or facility indicated?
+          Was referral indicated?
         </p>
 
         <p>
-          Was the treatment provided appropriate in the circumstances?
+          Was the treatment appropriate in the circumstances?
         </p>
 
         <p>
@@ -589,418 +656,406 @@
         </p>
 
         <p>
-          If the patient had received the alternative intervention at the
-          identified time, what outcome was medically probable?
+          Would earlier intervention probably have altered the outcome?
         </p>
       </div>
 
-      <p>
-        The medical reasoning should remain the expert's own.
-      </p>
-
-      <p class="authority">
+      <div class="expert-box">
         <strong>Good instruction:</strong>
         identifies the proposition to be answered.
-      </p>
 
-      <p class="authority">
+        <br><br>
+
         <strong>Poor instruction:</strong>
-        tells the expert what legal conclusion the practitioner wants.
-      </p>
+        tells the expert what conclusion the practitioner wants.
+      </div>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 9 -->
 
-    <h2>9. Give the Expert the Right Material</h2>
-
-    <p>
-      The practitioner should not assume that “the hospital file” is everything
-      the expert needs.
-    </p>
-
-    <p>
-      Depending on the case, the material may include:
-    </p>
-
-    <ul>
-      <li>hospital records;</li>
-      <li>nursing notes;</li>
-      <li>theatre records;</li>
-      <li>anaesthetic records;</li>
-      <li>laboratory results;</li>
-      <li>radiology reports and images;</li>
-      <li>previous medical records;</li>
-      <li>subsequent treatment records;</li>
-      <li>rehabilitation records;</li>
-      <li>relevant witness information; and</li>
-      <li>other expert reports where appropriate.</li>
-    </ul>
-
-    <button class="legal-term" onclick="toggleArticle('expert-material')">
-      Material supplied to the expert
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-9', this)"
+      aria-expanded="false"
+      aria-controls="article-9">
+      9. Material Supplied to the Expert
     </button>
 
-    <div id="expert-material" class="term-article" hidden>
-      <h3>Material supplied to the expert</h3>
+    <div id="article-9"
+         class="expandable-article"
+         hidden>
+
+      <h3>Material Supplied to the Expert</h3>
 
       <p>
-        The objective is not simply to send a large bundle. The objective is to
-        provide the material necessary for the expert to answer the particular
-        question reliably.
+        The practitioner should not assume that the hospital file is necessarily
+        the complete evidential foundation.
       </p>
 
       <p>
-        The practitioner should consider whether the material gives the expert
-        access to:
+        Depending upon the case, the expert may require:
       </p>
 
       <ul>
-        <li>the patient's condition before the event;</li>
-        <li>the relevant clinical decision-making;</li>
-        <li>the treatment actually provided;</li>
-        <li>the development of the injury;</li>
-        <li>subsequent treatment; and</li>
-        <li>the present condition.</li>
+        <li>hospital records;</li>
+        <li>nursing notes;</li>
+        <li>theatre records;</li>
+        <li>anaesthetic records;</li>
+        <li>laboratory results;</li>
+        <li>radiology reports and images;</li>
+        <li>previous medical records;</li>
+        <li>subsequent treatment records;</li>
+        <li>rehabilitation records; and</li>
+        <li>relevant witness information.</li>
       </ul>
 
-      <p>
-        Adverse records and contradictory entries should not simply disappear
-        from the expert's bundle.
-      </p>
+      <div class="warning">
+        <strong>Do not hide difficult material.</strong>
+        A contradictory record, adverse finding or relevant pre-existing
+        condition may affect the reliability of the opinion and should be
+        properly considered.
+      </div>
+
     </div>
 
-    <div class="warning">
-      <strong>Do not hide the difficult material.</strong>
-      An adverse record, contradictory entry or previous medical condition may
-      be critical to the reliability of the opinion.
-    </div>
+    <!-- 10 -->
 
-    <hr class="article-divider">
-
-    <h2>10. The Medico-Legal Report</h2>
-
-    <button class="legal-term" onclick="toggleArticle('medico-legal-report')">
-      Medico-legal report
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-10', this)"
+      aria-expanded="false"
+      aria-controls="article-10">
+      10. Medico-Legal Report
     </button>
 
-    <div id="medico-legal-report" class="term-article" hidden>
-      <h3>Medico-legal report</h3>
+    <div id="article-10"
+         class="expandable-article"
+         hidden>
+
+      <h3>Medico-Legal Report</h3>
 
       <p>
-        A useful report should allow the court and opposing parties to
-        understand the expert's expertise, information considered, assumptions,
-        reasoning and conclusions.
+        A useful report should allow the court to understand the expert's
+        expertise, information considered, assumptions, reasoning and conclusions.
       </p>
 
       <p>
-        The practitioner should be able to work through the report and ask:
+        The practitioner should ask:
       </p>
 
       <ul>
         <li>What question was the expert asked?</li>
-        <li>What material did the expert consider?</li>
+        <li>What material was considered?</li>
         <li>What facts were assumed?</li>
-        <li>What medical principles were applied?</li>
+        <li>What principles were applied?</li>
         <li>What alternative explanations were considered?</li>
         <li>Why was one explanation preferred?</li>
-        <li>How strong is the conclusion?</li>
         <li>What limitations affect the opinion?</li>
       </ul>
 
       <p>
         In
         <a href="https://www.saflii.org/za/cases/ZAWCHC/2010/3.html"
-           target="_blank" rel="noopener">
+           target="_blank"
+           rel="noopener">
           <strong>Schneider</strong>
         </a>,
-        the court stressed that an expert should identify limitations where
-        insufficient information prevents a firm opinion.
+        the court emphasised the importance of the expert identifying the
+        factual foundation and limitations of the opinion.
       </p>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 11 -->
 
-    <h2>11. Rule 36(9) and Expert Evidence</h2>
-
-    <p>
-      Once litigation begins, expert evidence is governed not only by principles
-      of evidence but also by procedural rules.
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('rule-36-9')">
-      Rule 36(9)
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-11', this)"
+      aria-expanded="false"
+      aria-controls="article-11">
+      11. Rule 36(9)
     </button>
 
-    <div id="rule-36-9" class="term-article" hidden>
+    <div id="article-11"
+         class="expandable-article"
+         hidden>
+
       <h3>Rule 36(9)</h3>
 
       <p>
-        Rule 36(9) of the Uniform Rules of Court regulates the giving of notice
-        concerning expert witnesses and the delivery of summaries of expert
-        opinion.
+        Rule 36(9) of the Uniform Rules of Court regulates expert witnesses
+        and the procedural delivery of expert notices and summaries in
+        High Court litigation.
       </p>
 
       <p>
-        Under the current High Court framework, the general time periods are
-        different for plaintiffs and defendants and are linked to the close of
-        pleadings and the case-management process.
+        The current procedural timetable must always be checked against the
+        applicable rules, directives and case-management order.
       </p>
 
-      <p>
-        The practitioner should therefore not treat an old textbook timetable
-        as automatically applicable to a current matter.
-      </p>
+      <div class="concept-box">
 
-      <div class="expert-box">
-
-        <button class="legal-term"
-                onclick="toggleArticle('expert-notice')">
-          Expert notice
+        <button
+          class="legal-term"
+          onclick="toggleArticle('article-11a', this)"
+          aria-expanded="false"
+          aria-controls="article-11a">
+          Expert Notice
         </button>
 
-        <p>
-          The procedural notice identifying an intention to call an expert
-          witness.
-        </p>
+        <div id="article-11a"
+             class="expandable-article"
+             hidden>
 
-        <div id="expert-notice" class="term-article" hidden>
-          <h3>Expert notice</h3>
+          <h3>Expert Notice</h3>
 
           <p>
-            In High Court litigation, the applicable rules and case-management
-            directions determine when the notice must be delivered.
+            The procedural notice concerning the intention to call an expert
+            witness.
           </p>
 
           <p>
-            The practitioner should record the deadline immediately on the
-            litigation diary and check the current rule, directive and
-            case-management order.
+            The practitioner should diarise the applicable deadline immediately
+            and check whether the case-management order imposes a different or
+            earlier timetable.
           </p>
+
         </div>
 
-        <br>
+      </div>
 
-        <button class="legal-term"
-                onclick="toggleArticle('expert-summary')">
-          Expert summary
+      <div class="concept-box">
+
+        <button
+          class="legal-term"
+          onclick="toggleArticle('article-11b', this)"
+          aria-expanded="false"
+          aria-controls="article-11b">
+          Expert Summary
         </button>
 
-        <p>
-          The procedural summary explaining the substance and reasons for an
-          expert's opinion.
-        </p>
+        <div id="article-11b"
+             class="expandable-article"
+             hidden>
 
-        <div id="expert-summary" class="term-article" hidden>
-          <h3>Expert summary</h3>
+          <h3>Expert Summary</h3>
 
           <p>
-            The summary should enable the opposing side and court to understand
-            the material opinions the expert is expected to give.
+            The summary communicates the substance of the expert's proposed
+            evidence and the reasons for the opinion.
           </p>
 
           <p>
-            It should not be approached as a formality. The summary is part of
-            the litigation architecture and should accurately identify the
-            opinions that will be relied upon.
+            It should accurately identify the material opinions on which the
+            party intends to rely.
           </p>
+
         </div>
 
       </div>
 
       <div class="warning">
         <strong>Important:</strong>
-        Procedural deadlines must be checked against the current applicable
-        Uniform Rules, Magistrates' Court Rules where relevant, case-management
-        order and any current directives. The High Court and Magistrates' Court
-        systems are not interchangeable.
+        Do not assume that a historical deadline remains current. Check the
+        current Uniform Rules, applicable court, practice directives and
+        case-management order.
       </div>
 
     </div>
 
-    <hr class="article-divider">
+    <!-- 12 -->
 
-    <h2>12. Expert Meetings and Joint Minutes</h2>
-
-    <p>
-      Where both sides have experts addressing the same issue, the experts may
-      be required to meet and identify what they agree and what remains
-      disputed.
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('joint-minutes')">
-      Joint minutes
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-12', this)"
+      aria-expanded="false"
+      aria-controls="article-12">
+      12. Joint Minutes
     </button>
 
-    <div id="joint-minutes" class="term-article" hidden>
-      <h3>Joint minutes</h3>
+    <div id="article-12"
+         class="expandable-article"
+         hidden>
+
+      <h3>Joint Minutes</h3>
 
       <p>
-        A joint minute should reduce uncertainty and identify clearly the
-        matters that remain disputed.
+        Where experts for the opposing parties address the same issues, they
+        may be required to meet and identify matters of agreement and
+        disagreement.
       </p>
 
       <p>
-        It may identify:
+        The joint minute should make the remaining dispute clearer, not obscure it.
+      </p>
+
+      <p>
+        The practitioner should identify:
       </p>
 
       <ul>
         <li>what the experts agree upon;</li>
-        <li>what they do not agree upon;</li>
-        <li>the reasons for disagreement; and</li>
+        <li>what remains disputed;</li>
+        <li>why they disagree; and</li>
         <li>whether the disagreement concerns fact, interpretation or opinion.</li>
       </ul>
 
       <p class="case-law">
         See
         <a href="https://www3.saflii.org/za/cases/ZASCA/2018/52.html"
-           target="_blank" rel="noopener">
+           target="_blank"
+           rel="noopener">
           <strong>Bee v Road Accident Fund [2018] ZASCA 52</strong>
         </a>
-        on the importance and evidential significance of expert joint minutes.
+        concerning the importance of expert joint minutes.
       </p>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 13 -->
 
-    <h2>13. What the Experts Actually Agree About</h2>
-
-    <p>
-      The practitioner should distinguish carefully between an agreement about
-      a fact and an agreement about an expert opinion.
-    </p>
-
-    <div class="concept-box">
-      <button class="legal-term"
-              onclick="toggleArticle('agreed-factual-proposition')">
-        Agreed factual proposition
-      </button>
-
-      <div id="agreed-factual-proposition" class="term-article" hidden>
-        <h3>Agreed factual proposition</h3>
-
-        <p>
-          This refers to an underlying factual proposition that the experts
-          accept as common ground for purposes of their analysis.
-        </p>
-
-        <p>
-          Examples might include the timing of an event, a recorded test result,
-          or a particular clinical finding, depending upon what is actually
-          established in the evidence.
-        </p>
-
-        <p>
-          The practitioner should still examine the evidential foundation of
-          the agreement and ensure that the agreed fact is not based merely on
-          an incorrect assumption.
-        </p>
-      </div>
-    </div>
-
-    <div class="concept-box">
-      <button class="legal-term"
-              onclick="toggleArticle('agreed-expert-opinion')">
-        Agreed expert opinion
-      </button>
-
-      <div id="agreed-expert-opinion" class="term-article" hidden>
-        <h3>Agreed expert opinion</h3>
-
-        <p>
-          This refers to an expert conclusion that both sides' experts accept
-          after considering the relevant material.
-        </p>
-
-        <p>
-          Such agreement can materially narrow the issues, but the practitioner
-          should still understand exactly what has been agreed and what
-          proposition remains for the court to determine.
-        </p>
-
-        <p class="case-law">
-          See
-          <a href="https://www3.saflii.org/za/cases/ZASCA/2018/52.html"
-             target="_blank" rel="noopener">
-            <strong>Bee v Road Accident Fund [2018] ZASCA 52</strong>
-          </a>
-          on the importance of agreements reached by experts in joint minutes.
-        </p>
-      </div>
-    </div>
-
-    <hr class="article-divider">
-
-    <h2>14. Conflicting Experts</h2>
-
-    <p>
-      A medical-negligence trial may involve genuinely competing professional
-      opinions.
-    </p>
-
-    <p>
-      The existence of disagreement does not mean that one expert must simply
-      be preferred because of status or confidence.
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('conflicting-experts')">
-      Conflicting experts
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-13', this)"
+      aria-expanded="false"
+      aria-controls="article-13">
+      13. Agreed Factual Proposition
     </button>
 
-    <div id="conflicting-experts" class="term-article" hidden>
-      <h3>Conflicting experts</h3>
+    <div id="article-13"
+         class="expandable-article"
+         hidden>
+
+      <h3>Agreed Factual Proposition</h3>
 
       <p>
-        Where experts disagree, the court examines the reasoning underlying the
-        competing opinions and considers those opinions against the objective
-        facts and probabilities of the case.
+        An agreed factual proposition is an underlying factual matter that the
+        experts accept as common ground for purposes of their analysis.
+      </p>
+
+      <p>
+        The practitioner should still verify the evidential foundation of the
+        agreement.
+      </p>
+
+      <p>
+        An apparent agreement is only useful if the practitioner understands
+        precisely what has been agreed and what remains outside the agreement.
+      </p>
+
+    </div>
+
+    <!-- 14 -->
+
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-14', this)"
+      aria-expanded="false"
+      aria-controls="article-14">
+      14. Agreed Expert Opinion
+    </button>
+
+    <div id="article-14"
+         class="expandable-article"
+         hidden>
+
+      <h3>Agreed Expert Opinion</h3>
+
+      <p>
+        An agreed expert opinion is a conclusion accepted by the relevant
+        experts after consideration of the material.
+      </p>
+
+      <p>
+        Such agreement may substantially narrow the issues for trial.
+      </p>
+
+      <p>
+        The practitioner should nevertheless determine precisely what proposition
+        has been agreed and what the court still needs to decide.
+      </p>
+
+      <p class="case-law">
+        See
+        <a href="https://www3.saflii.org/za/cases/ZASCA/2018/52.html"
+           target="_blank"
+           rel="noopener">
+          <strong>Bee v Road Accident Fund [2018] ZASCA 52</strong>
+        </a>.
+      </p>
+
+    </div>
+
+    <!-- 15 -->
+
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-15', this)"
+      aria-expanded="false"
+      aria-controls="article-15">
+      15. Conflicting Experts
+    </button>
+
+    <div id="article-15"
+         class="expandable-article"
+         hidden>
+
+      <h3>Conflicting Experts</h3>
+
+      <p>
+        A medical-negligence case may involve genuinely competing professional
+        opinions.
+      </p>
+
+      <p>
+        The court must evaluate the reasoning underlying those opinions rather
+        than simply choosing the expert with the stronger title or more
+        confident presentation.
       </p>
 
       <p>
         The foundational authority remains
         <a href="https://www.saflii.org/za/cases/ZASCA/2001/12.html"
-           target="_blank" rel="noopener">
+           target="_blank"
+           rel="noopener">
           <strong>Michael v Linksfield Park Clinic</strong>
         </a>.
       </p>
 
       <p>
-        A later example is
-        <a href="https://www3.saflii.org/za/cases/ZAWCHC/2026/463.html"
-           target="_blank" rel="noopener">
-          <strong>Hassiem v MEC for Health, Western Cape Provincial Health
-          Department [2026] ZAWCHC 463</strong>
-        </a>,
-        where the court again applied the Linksfield approach to competing
-        medical opinions.
+        The practitioner should therefore ask:
       </p>
 
-      <p class="authority">
-        <strong>Litigation lesson:</strong>
-        Do not ask merely, “Whose expert is right?”
-        Ask, “Which opinion is supported by the facts, assumptions,
-        methodology and reasoning?”
-      </p>
+      <ul>
+        <li>What facts support each opinion?</li>
+        <li>What assumptions differ?</li>
+        <li>What methodology differs?</li>
+        <li>What alternative explanation has each expert considered?</li>
+        <li>Which opinion better fits the objective evidence?</li>
+      </ul>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 16 -->
 
-    <h2>15. The Unfavourable Expert Opinion</h2>
-
-    <p>
-      One of the most difficult moments in a medical-negligence practice is
-      receiving an opinion that does not support the client's case.
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('unfavourable-opinion')">
-      Unfavourable opinion
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-16', this)"
+      aria-expanded="false"
+      aria-controls="article-16">
+      16. Unfavourable Opinion
     </button>
 
-    <div id="unfavourable-opinion" class="term-article" hidden>
-      <h3>Unfavourable opinion</h3>
+    <div id="article-16"
+         class="expandable-article"
+         hidden>
+
+      <h3>Unfavourable Opinion</h3>
 
       <p>
         An unfavourable opinion is information about the strength of the case.
-        It should be analysed before deciding what litigation strategy follows.
+        It should be analysed before deciding what strategy follows.
       </p>
 
       <p>
@@ -1008,44 +1063,40 @@
       </p>
 
       <ul>
-        <li>Is the expert addressing the correct question?</li>
+        <li>Is the expert answering the correct question?</li>
         <li>Was the complete medical record available?</li>
-        <li>Did the expert misunderstand a factual issue?</li>
-        <li>Are the assumptions correct?</li>
-        <li>Has contrary evidence been considered?</li>
+        <li>Are the factual assumptions correct?</li>
+        <li>Was contrary evidence considered?</li>
         <li>Is the conclusion stronger than the reasoning supports?</li>
-        <li>Is the real disagreement medical or legal?</li>
+        <li>Is the disagreement actually about law rather than medicine?</li>
       </ul>
 
-      <p class="authority">
+      <div class="expert-box">
         <strong>Practitioner discipline:</strong>
-        The purpose of the expert process is to discover what the evidence
-        supports, not to manufacture an opinion that supports the client.
-      </p>
+        The purpose of expert evidence is to discover what the evidence supports,
+        not to manufacture an opinion that supports the client.
+      </div>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 17 -->
 
-    <h2>16. When One Expert Is Not Enough</h2>
-
-    <p>
-      A complex injury may cross several specialised disciplines.
-    </p>
-
-    <p>
-      The manuscript specifically identifies the possibility of building an
-      expert team rather than searching for one “master expert.”
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('expert-team')">
-      Expert team
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-17', this)"
+      aria-expanded="false"
+      aria-controls="article-17">
+      17. Expert Team
     </button>
 
-    <div id="expert-team" class="term-article" hidden>
-      <h3>Expert team</h3>
+    <div id="article-17"
+         class="expandable-article"
+         hidden>
+
+      <h3>Expert Team</h3>
 
       <p>
-        An expert team is useful where separate specialised propositions cannot
+        A complex injury may involve several specialised questions that cannot
         responsibly be answered by one discipline.
       </p>
 
@@ -1058,6 +1109,7 @@
         </thead>
 
         <tbody>
+
           <tr>
             <td>Was the surgery appropriately performed?</td>
             <td>Relevant surgical specialist</td>
@@ -1092,125 +1144,88 @@
             <td>How should future loss be quantified?</td>
             <td>Actuarial expertise</td>
           </tr>
+
         </tbody>
       </table>
 
       <p>
-        The disciplines should not be selected merely because they appear in a
-        familiar medico-legal template. Each expert should have a defined
-        forensic purpose.
+        Each expert should have a defined role and a defined proposition to
+        address.
       </p>
-    </div>
-
-    <hr class="article-divider">
-
-    <h2>17. Preparing the Expert for Trial</h2>
-
-    <p>
-      A strong written report does not automatically produce strong oral
-      evidence.
-    </p>
-
-    <div class="checklist">
-
-      <h3>Before the expert enters the witness box</h3>
-
-      <ul>
-        <li>Review the report paragraph by paragraph.</li>
-        <li>Identify every material assumption.</li>
-        <li>Identify the strongest contrary evidence.</li>
-        <li>Know which opinions are firm and which are qualified.</li>
-        <li>Check the expert's understanding of the records.</li>
-        <li>Review the opposing expert's report.</li>
-        <li>Review the joint minute carefully.</li>
-        <li>Identify what has been agreed and what remains disputed.</li>
-      </ul>
 
     </div>
 
-    <button class="legal-term"
-            onclick="toggleArticle('expert-trial-preparation')">
-      Preparing the expert for trial
+    <!-- 18 -->
+
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-18', this)"
+      aria-expanded="false"
+      aria-controls="article-18">
+      18. Preparing the Expert for Trial
     </button>
 
-    <div id="expert-trial-preparation" class="term-article" hidden>
-      <h3>Preparing the expert for trial</h3>
+    <div id="article-18"
+         class="expandable-article"
+         hidden>
+
+      <h3>Preparing the Expert for Trial</h3>
 
       <p>
-        Trial preparation should not involve coaching an expert to give evidence
-        favourable to the client.
+        A strong written report does not automatically produce strong oral
+        evidence.
       </p>
 
       <p>
-        It should involve ensuring that the expert understands the evidence,
-        assumptions, limits of the opinion and areas of disagreement.
+        Trial preparation should ensure that the expert understands:
       </p>
+
+      <ul>
+        <li>the records;</li>
+        <li>the factual assumptions;</li>
+        <li>the limits of the opinion;</li>
+        <li>the opposing expert's position; and</li>
+        <li>the remaining areas of disagreement.</li>
+      </ul>
 
       <div class="question-box">
-        <p><strong>What is this expert actually proving?</strong></p>
-        <p><strong>What evidence supports the proposition?</strong></p>
-        <p><strong>What is the strongest argument against it?</strong></p>
+
+        <p>
+          <strong>What is this expert actually proving?</strong>
+        </p>
+
+        <p>
+          <strong>What evidence supports that proposition?</strong>
+        </p>
+
+        <p>
+          <strong>What is the strongest argument against it?</strong>
+        </p>
+
       </div>
-    </div>
 
-    <hr class="article-divider">
-
-    <h2>18. Reading an Expert Report as a Practitioner</h2>
-
-    <p>
-      The practitioner should not read a medico-legal report passively.
-      Read it as though preparing the case for cross-examination.
-    </p>
-
-    <div class="checklist">
-
-      <h3>Report review questions</h3>
-
-      <ul>
-        <li>
-          <strong>Question:</strong>
-          What exactly was the expert asked?
-        </li>
-
-        <li>
-          <strong>Material:</strong>
-          What records and information were considered?
-        </li>
-
-        <li>
-          <strong>Facts:</strong>
-          Which facts are proved, disputed or assumed?
-        </li>
-
-        <li>
-          <strong>Method:</strong>
-          How did the expert reason from facts to conclusion?
-        </li>
-
-        <li>
-          <strong>Alternatives:</strong>
-          What alternative explanations were considered?
-        </li>
-
-        <li>
-          <strong>Conclusion:</strong>
-          Is the conclusion definitive, probable, possible or provisional?
-        </li>
-
-        <li>
-          <strong>Limitations:</strong>
-          What information would change the opinion?
-        </li>
-      </ul>
+      <p>
+        The preparation should not turn the expert into an advocate. The expert
+        remains responsible for providing an independent professional opinion.
+      </p>
 
     </div>
 
-    <button class="legal-term" onclick="toggleArticle('report-reasoning')">
-      Reasoning behind the opinion
+    <!-- 19 -->
+
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-19', this)"
+      aria-expanded="false"
+      aria-controls="article-19">
+      19. Reasoning Behind the Opinion
     </button>
 
-    <div id="report-reasoning" class="term-article" hidden>
-      <h3>Reasoning behind the opinion</h3>
+    <div id="article-19"
+         class="expandable-article"
+         hidden>
+
+      <h3>Reasoning Behind the Opinion</h3>
 
       <p>
         The expert's conclusion should not appear as an unexplained assertion.
@@ -1221,30 +1236,37 @@
         moved from the facts and specialised knowledge to the ultimate opinion.
       </p>
 
+      <p>
+        This is why the practitioner should scrutinise not only the conclusion
+        but the reasoning that leads to it.
+      </p>
+
       <p class="case-law">
         This principle is central to
         <a href="https://www.saflii.org/za/cases/ZASCA/2001/12.html"
-           target="_blank" rel="noopener">
+           target="_blank"
+           rel="noopener">
           <strong>Michael v Linksfield Park Clinic</strong>
         </a>.
       </p>
+
     </div>
 
-    <hr class="article-divider">
+    <!-- 20 -->
 
-    <h2>19. The Cost of Expert Evidence</h2>
-
-    <p>
-      Expert evidence can become one of the most expensive components of
-      medical-negligence litigation.
-    </p>
-
-    <button class="legal-term" onclick="toggleArticle('forensic-purpose')">
-      Forensic purpose
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-20', this)"
+      aria-expanded="false"
+      aria-controls="article-20">
+      20. Forensic Purpose
     </button>
 
-    <div id="forensic-purpose" class="term-article" hidden>
-      <h3>Forensic purpose</h3>
+    <div id="article-20"
+         class="expandable-article"
+         hidden>
+
+      <h3>Forensic Purpose</h3>
 
       <p>
         A forensic purpose is the specific reason an item of expert evidence is
@@ -1252,12 +1274,13 @@
       </p>
 
       <p>
-        Before incurring an expert cost, the practitioner should be able to say
-        exactly what proposition the report is intended to establish or test.
+        Before incurring an expert cost, the practitioner should be able to
+        identify exactly what proposition the report is intended to establish
+        or test.
       </p>
 
       <p>
-        The question is not simply:
+        The question is not:
         <em>“Does this type of case usually have this expert?”</em>
       </p>
 
@@ -1265,69 +1288,59 @@
         The better question is:
         <strong>“What issue in this case requires this expert's evidence?”</strong>
       </p>
+
     </div>
 
-    <div class="checklist">
+    <!-- 21 -->
 
-      <h3>Before incurring an expert cost</h3>
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('article-21', this)"
+      aria-expanded="false"
+      aria-controls="article-21">
+      21. Expert Question Test
+    </button>
 
-      <ul>
-        <li>What proposition does this expert address?</li>
-        <li>Is the proposition genuinely disputed?</li>
-        <li>Could an existing expert answer it?</li>
-        <li>What records are necessary?</li>
-        <li>Is the issue liability, causation or quantum?</li>
-        <li>Will the opinion materially affect litigation strategy?</li>
-      </ul>
+    <div id="article-21"
+         class="expandable-article"
+         hidden>
+
+      <h3>Expert Question Test</h3>
+
+      <p>
+        Before appointing an expert, complete this sentence:
+      </p>
+
+      <div class="principle">
+        <strong>
+          “I need this expert because the court must decide whether ______.”
+        </strong>
+      </div>
+
+      <p>
+        Then complete:
+      </p>
+
+      <div class="principle">
+        <strong>
+          “The expert will assist the court by explaining ______.”
+        </strong>
+      </div>
+
+      <p>
+        If neither sentence can be completed clearly, the practitioner may not
+        yet have identified the issue requiring expert evidence.
+      </p>
 
     </div>
 
     <hr class="article-divider">
 
-    <h2>20. The Medico-Legal Team Map</h2>
-
-    <div class="map">
-      CLIENT'S STORY
-      <br>↓<br>
-      MEDICAL RECORDS
-      <br>↓<br>
-      CHRONOLOGY
-      <br>↓<br>
-      LEGAL ISSUES
-      <br>↓<br>
-      QUESTIONS REQUIRING SPECIALISED KNOWLEDGE
-      <br>↓<br>
-      EXPERT SELECTION
-      <br>↓<br>
-      INSTRUCTION
-      <br>↓<br>
-      REPORT
-      <br>↓<br>
-      OPPOSING REPORT
-      <br>↓<br>
-      JOINT MINUTE
-      <br>↓<br>
-      REMAINING DISPUTES
-      <br>↓<br>
-      TRIAL EVIDENCE
-    </div>
-
-    <p>
-      The expert evidence should never exist as a collection of disconnected
-      reports.
-    </p>
-
-    <p>
-      Each report should have a place within the larger case map.
-    </p>
-
-    <hr class="article-divider">
-
-    <h2>21. Practitioner’s Expert File</h2>
+    <h2>Practitioner's Expert File</h2>
 
     <div class="checklist">
 
-      <h3>Expert file checklist</h3>
+      <h3>Before the expert evidence is finalised</h3>
 
       <ul>
 
@@ -1338,7 +1351,7 @@
 
         <li>
           <input type="checkbox">
-          The expert's discipline is appropriate to that proposition.
+          The expert's discipline is appropriate.
         </li>
 
         <li>
@@ -1348,12 +1361,12 @@
 
         <li>
           <input type="checkbox">
-          The expert has received the relevant records.
+          The relevant records have been supplied.
         </li>
 
         <li>
           <input type="checkbox">
-          Material adverse information has not been withheld.
+          Material adverse information has not been hidden.
         </li>
 
         <li>
@@ -1368,17 +1381,17 @@
 
         <li>
           <input type="checkbox">
-          The expert explains the reasoning supporting material conclusions.
+          The reasoning supporting the conclusions is understood.
         </li>
 
         <li>
           <input type="checkbox">
-          The expert identifies limitations and uncertainty.
+          Limitations and uncertainty have been identified.
         </li>
 
         <li>
           <input type="checkbox">
-          Rule 36(9) requirements have been considered.
+          Applicable expert-evidence rules have been considered.
         </li>
 
         <li>
@@ -1393,12 +1406,12 @@
 
         <li>
           <input type="checkbox">
-          Areas of agreement and disagreement are identified.
+          Areas of agreement and disagreement are clear.
         </li>
 
         <li>
           <input type="checkbox">
-          The expert evidence has been integrated into the pleaded case.
+          The expert evidence fits into the pleaded case.
         </li>
 
       </ul>
@@ -1407,18 +1420,15 @@
 
     <hr class="article-divider">
 
-    <h2>22. Interactive Exercise: Choose the Expert</h2>
+    <h2>Interactive Exercise: Choose the Expert</h2>
 
     <div class="expert-box">
+
       <p><strong>Scenario</strong></p>
 
       <p>
         A patient undergoes surgery and later develops severe neurological
         impairment.
-      </p>
-
-      <p>
-        The patient alleges that something went wrong during the operation.
       </p>
 
       <p>
@@ -1435,9 +1445,11 @@
         <li>the industrial psychologist; and</li>
         <li>the actuary.</li>
       </ul>
+
     </div>
 
     <div class="question-box">
+
       <h3>Question 1</h3>
 
       <p>
@@ -1446,25 +1458,28 @@
       </p>
 
       <details>
+
         <summary>Reveal discussion</summary>
 
         <p>
           The relevant surgical discipline would ordinarily address that
-          proposition. The exact specialty depends upon the procedure in issue.
+          proposition. The precise specialty depends upon the procedure in issue.
         </p>
 
       </details>
+
     </div>
 
     <div class="question-box">
+
       <h3>Question 2</h3>
 
       <p>
-        Which expert would address whether anaesthetic management was
-        appropriate?
+        Which expert would address whether anaesthetic management was appropriate?
       </p>
 
       <details>
+
         <summary>Reveal discussion</summary>
 
         <p>
@@ -1473,17 +1488,19 @@
         </p>
 
       </details>
+
     </div>
 
     <div class="question-box">
+
       <h3>Question 3</h3>
 
       <p>
-        Which expert might address the nature and consequences of the
-        neurological injury?
+        Which expert might address the neurological injury and its consequences?
       </p>
 
       <details>
+
         <summary>Reveal discussion</summary>
 
         <p>
@@ -1492,9 +1509,11 @@
         </p>
 
       </details>
+
     </div>
 
     <div class="question-box">
+
       <h3>Question 4</h3>
 
       <p>
@@ -1503,179 +1522,58 @@
       </p>
 
       <details>
+
         <summary>Reveal discussion</summary>
 
         <p>
-          The answer may involve several disciplines. Functional consequences
+          More than one discipline may be appropriate. Functional consequences
           may require rehabilitation or occupational expertise; vocational
           consequences may require industrial psychology; and quantification
           may require actuarial expertise.
         </p>
 
       </details>
+
     </div>
 
     <hr class="article-divider">
 
-    <h2>23. The Expert Question Test</h2>
-
-    <div class="principle">
-      Before appointing any expert, complete this sentence:
-      <br><br>
-
-      <strong>
-        “I need this expert because the court must decide whether ______.”
-      </strong>
-    </div>
-
-    <button class="legal-term" onclick="toggleArticle('expert-question-test')">
-      Expert question test
+    <button
+      class="interactive-heading"
+      onclick="toggleArticle('final-test', this)"
+      aria-expanded="false"
+      aria-controls="final-test">
+      The Final Practitioner Test
     </button>
 
-    <div id="expert-question-test" class="term-article" hidden>
-      <h3>Expert question test</h3>
+    <div id="final-test"
+         class="expandable-article"
+         hidden>
 
-      <p>
-        The test forces the practitioner to identify the proposition for which
-        specialised evidence is actually necessary.
-      </p>
+      <h3>The Final Practitioner Test</h3>
 
-      <p>
-        Then complete:
-      </p>
+      <div class="principle">
 
-      <div class="question-box">
         <p>
           <strong>
-            “The expert will assist the court by explaining ______.”
+            Do not appoint an expert because the case “needs an expert.”
           </strong>
         </p>
+
+        <p>
+          Appoint an expert because a specific proposition requires specialised
+          knowledge and that proposition matters to the outcome of the case.
+        </p>
+
       </div>
 
       <p>
-        If that sentence cannot be completed clearly, the practitioner may not
-        yet have identified the issue requiring expert evidence.
-      </p>
-    </div>
-
-    <hr class="article-divider">
-
-    <h2>24. Leading Authorities for Further Research</h2>
-
-    <ul>
-
-      <li>
-        <a href="https://www.saflii.org/za/cases/ZASCA/2001/12.html"
-           target="_blank" rel="noopener">
-          <strong>Michael and Another v Linksfield Park Clinic (Pty) Ltd and Another
-          [2001] ZASCA 12; 2001 (3) SA 1188 (SCA)</strong>
-        </a>
-        — foundational authority on evaluating expert opinion and logical
-        reasoning.
-      </li>
-
-      <li>
-        <a href="https://www.saflii.org/za/cases/ZACC/2015/33.html"
-           target="_blank" rel="noopener">
-          <strong>Oppelt v Head: Health, Department of Health Provincial
-          Administration: Western Cape [2015] ZACC 33</strong>
-        </a>
-        — Constitutional Court authority involving expert evidence, medical
-        negligence and causation.
-      </li>
-
-      <li>
-        <a href="https://www.saflii.org/za/cases/ZAWCHC/2010/3.html"
-           target="_blank" rel="noopener">
-          <strong>Schneider NO and Others v Aspeling and Another
-          [2010] ZAWCHC 3</strong>
-        </a>
-        — important authority on expert independence, objectivity and the
-        factual foundation of expert evidence.
-      </li>
-
-      <li>
-        <a href="https://www3.saflii.org/za/cases/ZASCA/2018/52.html"
-           target="_blank" rel="noopener">
-          <strong>Bee v Road Accident Fund [2018] ZASCA 52</strong>
-        </a>
-        — important authority on expert reasoning and joint minutes.
-      </li>
-
-      <li>
-        <a href="https://www3.saflii.org/za/cases/ZASCA/2018/118.html"
-           target="_blank" rel="noopener">
-          <strong>Life Healthcare Group (Pty) Ltd v Suliman [2018] ZASCA 118</strong>
-        </a>
-        — reaffirmed the court's responsibility to evaluate competing expert
-        evidence.
-      </li>
-
-      <li>
-        <a href="https://www3.saflii.org/za/cases/ZAWCHC/2025/183.html"
-           target="_blank" rel="noopener">
-          <strong>Cheminais v Crane [2025] ZAWCHC 183</strong>
-        </a>
-        — recent application of the Linksfield approach to logical expert
-        reasoning.
-      </li>
-
-      <li>
-        <a href="https://www3.saflii.org/za/cases/ZAWCHC/2026/463.html"
-           target="_blank" rel="noopener">
-          <strong>Hassiem v MEC for Health, Western Cape Provincial Health
-          Department [2026] ZAWCHC 463</strong>
-        </a>
-        — recent application of the approach to competing medical opinions.
-      </li>
-
-    </ul>
-
-    <div class="research-note">
-      <strong>Research note:</strong>
-      Procedural requirements for expert evidence should always be checked
-      against the current applicable rules, directives and case-management
-      order. This chapter is a practitioner guide, not a substitute for
-      checking the procedural regime governing the particular matter.
-    </div>
-
-    <hr class="article-divider">
-
-    <h2>25. The Practitioner’s Test</h2>
-
-    <div class="principle">
-
-      <p>
-        <strong>
-          Do not appoint an expert because the case “needs an expert.”
-        </strong>
+        The expert should receive the material necessary to answer that
+        proposition independently and objectively.
       </p>
 
       <p>
-        Appoint an expert because a specific proposition requires specialised
-        knowledge and that proposition matters to the outcome of the case.
-      </p>
-
-    </div>
-
-    <button class="legal-term"
-            onclick="toggleArticle('final-practitioner-test')">
-      What the expert is actually there to prove
-    </button>
-
-    <div id="final-practitioner-test" class="term-article" hidden>
-
-      <h3>What the expert is actually there to prove</h3>
-
-      <p>
-        Before trial, the practitioner should know exactly what each expert is
-        there to establish.
-      </p>
-
-      <p>
-        The expert should have a defined proposition, the necessary material,
-        an independent reasoning process and a conclusion that fits within the
-        evidential structure of the case.
+        The report should explain the reasoning.
       </p>
 
       <p>
@@ -1687,9 +1585,68 @@
       </p>
 
       <p>
-        And the practitioner should understand exactly what remains for the
-        court to decide.
+        Before trial, the practitioner should know exactly what each expert is
+        there to prove.
       </p>
+
+    </div>
+
+    <div class="research-note">
+
+      <strong>Research note:</strong>
+      Expert-evidence procedure should always be checked against the current
+      applicable rules, directives and case-management order. High Court and
+      Magistrates' Court procedures are not interchangeable.
+
+      <p>
+        Leading authorities for further research include:
+      </p>
+
+      <ul>
+
+        <li>
+          <a href="https://www.saflii.org/za/cases/ZASCA/2001/12.html"
+             target="_blank"
+             rel="noopener">
+            <strong>
+              Michael and Another v Linksfield Park Clinic (Pty) Ltd and Another
+              [2001] ZASCA 12
+            </strong>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.saflii.org/za/cases/ZACC/2015/33.html"
+             target="_blank"
+             rel="noopener">
+            <strong>
+              Oppelt v Head: Health, Department of Health Provincial
+              Administration: Western Cape [2015] ZACC 33
+            </strong>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.saflii.org/za/cases/ZAWCHC/2010/3.html"
+             target="_blank"
+             rel="noopener">
+            <strong>
+              Schneider NO and Others v Aspeling and Another [2010] ZAWCHC 3
+            </strong>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www3.saflii.org/za/cases/ZASCA/2018/52.html"
+             target="_blank"
+             rel="noopener">
+            <strong>
+              Bee v Road Accident Fund [2018] ZASCA 52
+            </strong>
+          </a>
+        </li>
+
+      </ul>
 
     </div>
 
@@ -1713,14 +1670,23 @@
 </main>
 
 <script>
-  function toggleArticle(id) {
+  function toggleArticle(id, button) {
     const article = document.getElementById(id);
 
     if (!article) {
       return;
     }
 
-    article.hidden = !article.hidden;
+    const isHidden = article.hidden;
+
+    article.hidden = !isHidden;
+
+    if (button) {
+      button.setAttribute(
+        "aria-expanded",
+        String(isHidden)
+      );
+    }
   }
 </script>
 
