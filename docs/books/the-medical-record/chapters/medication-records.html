@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 4 — Medication Records</title>
+
+    <link rel="stylesheet" href="../../../css/book.css">
+
+    <style>
+        .record-demo {
+            background: #fafafa;
+            border: 1px solid #d8d2ca;
+            margin: 30px 0;
+            font-family: Arial, sans-serif;
+            overflow-x: auto;
+        }
+
+        .record-header {
+            background: #17233c;
+            color: white;
+            padding: 18px 22px;
+        }
+
+        .record-header strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .record-body {
+            padding: 22px;
+        }
+
+        .medication-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 760px;
+        }
+
+        .medication-table th,
+        .medication-table td {
+            border: 1px solid #d8d2ca;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .medication-table th {
+            background: #f0edf7;
+            color: #17233c;
+        }
+
+        .medication-table .given {
+            font-weight: bold;
+        }
+
+        .medication-table .not-given {
+            font-weight: bold;
+        }
+
+        .record-section {
+            border-bottom: 1px solid #e2ded8;
+            padding: 18px 0;
+        }
+
+        .record-section:last-child {
+            border-bottom: none;
+        }
+
+        .record-section h3 {
+            margin-top: 0;
+            color: #17233c;
+            font-size: 18px;
+        }
+
+        .record-row {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            padding: 10px 0;
+            gap: 15px;
+        }
+
+        .record-label {
+            font-weight: bold;
+            color: #5b4b8a;
+        }
+
+        .record-note {
+            background: #f0edf7;
+            border-left: 5px solid #5b4b8a;
+            padding: 18px 20px;
+            margin: 25px 0;
+        }
+
+        .investigation-question {
+            background: #fff;
+            border: 1px solid #ddd7cf;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .investigation-question strong {
+            color: #5b4b8a;
+        }
+
+        .highlight {
+            background: #fffdf5;
+            border: 1px solid #ddd7cf;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 650px) {
+            .record-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="book-label">
+        BOOK 3 — THE MEDICAL RECORD
+    </div>
+
+    <h1>Chapter 4 — Medication Records</h1>
+
+    <p>
+        Reading prescriptions, administration records and medication decisions
+    </p>
+
+</header>
+
+
+<nav class="book-nav">
+
+    <a href="../index.html">
+        Book Home
+    </a>
+
+    <a href="#medication-records">
+        Medication Records
+    </a>
+
+    <a href="#mar-example">
+        MAR Example
+    </a>
+
+    <a href="#investigation">
+        Investigation
+    </a>
+
+</nav>
+
+
+<main class="book-content">
+
+    <section id="medication-records">
+
+        <h2>1. Why Medication Records Matter</h2>
+
+        <p>
+            Medication records can provide important evidence about what
+            treatment was prescribed, what treatment was administered,
+            when it was administered, and sometimes why a particular
+            medication was withheld or changed.
+        </p>
+
+        <p>
+            In a medical-negligence investigation, medication records may
+            therefore help reconstruct the treatment provided to the patient
+            and identify questions requiring further investigation.
+        </p>
+
+        <div class="principle">
+
+            <strong>Practitioner's Principle</strong><br><br>
+
+            Do not assume that a medication being prescribed means that it
+            was administered, or that an administered medication was given
+            at the prescribed time.
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>2. Different Medication Documents</h2>
+
+        <p>
+            Medication information may appear in several parts of the
+            medical record.
+        </p>
+
+        <ul>
+
+            <li>
+                prescriptions;
+            </li>
+
+            <li>
+                medication orders;
+            </li>
+
+            <li>
+                medication administration records;
+            </li>
+
+            <li>
+                nursing notes;
+            </li>
+
+            <li>
+                practitioner progress notes;
+            </li>
+
+            <li>
+                pharmacy records; and
+            </li>
+
+            <li>
+                discharge medication lists.
+            </li>
+
+        </ul>
+
+        <p>
+            These documents should be compared rather than automatically
+            treated as interchangeable.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>3. Prescription Versus Administration</h2>
+
+        <p>
+            One of the most important distinctions is between an order for
+            medication and evidence that the medication was actually
+            administered.
+        </p>
+
+        <p>
+            A practitioner may prescribe a medication, but the administration
+            record may show whether it was subsequently given.
+        </p>
+
+        <p>
+            Conversely, the administration record may identify a medication
+            that was administered and provide a time that can be compared
+            with other clinical events.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Litigation Question</strong>
+
+            <p>
+                What was ordered, what was actually administered, when was
+                it administered, and what happened afterwards?
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>4. A Fictional Medication Administration Record</h2>
+
+        <p>
+            The following is a fictional reconstruction created for training
+            purposes. It does not represent a real patient.
+        </p>
+
+
+        <div class="record-demo" id="mar-example">
+
+            <div class="record-header">
+
+                <strong>FICTIONAL MEDICATION ADMINISTRATION RECORD</strong>
+
+                Patient: Patient A
+
+                <br>
+
+                Date: 14 March
+
+            </div>
+
+
+            <div class="record-body">
+
+                <table class="medication-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Medication</th>
+                            <th>Ordered Dose</th>
+                            <th>Route</th>
+                            <th>Scheduled Time</th>
+                            <th>Administration</th>
+                            <th>Recorded By</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Analgesic A</td>
+                            <td>As prescribed</td>
+                            <td>Oral</td>
+                            <td>09:00</td>
+                            <td class="given">Given 09:05</td>
+                            <td>Nurse 1</td>
+                        </tr>
+
+                        <tr>
+                            <td>Antiemetic B</td>
+                            <td>As prescribed</td>
+                            <td>IV</td>
+                            <td>09:15</td>
+                            <td class="given">Given 09:20</td>
+                            <td>Nurse 1</td>
+                        </tr>
+
+                        <tr>
+                            <td>Analgesic A</td>
+                            <td>As prescribed</td>
+                            <td>Oral</td>
+                            <td>13:00</td>
+                            <td class="not-given">Not recorded</td>
+                            <td>—</td>
+                        </tr>
+
+                        <tr>
+                            <td>Antiemetic B</td>
+                            <td>As prescribed</td>
+                            <td>IV</td>
+                            <td>13:15</td>
+                            <td class="given">Given 13:30</td>
+                            <td>Nurse 2</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="record-note">
+
+            <strong>Notice the distinction.</strong>
+
+            <p>
+                The scheduled time is not necessarily the administration time.
+            </p>
+
+            <p>
+                The record also contains an entry where administration is not
+                recorded. That creates an investigation point, but it does
+                not automatically establish what happened.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>5. Medication Timing</h2>
+
+        <p>
+            Timing may become important when medication is being considered
+            in relation to the patient's clinical condition.
+        </p>
+
+        <p>
+            The practitioner should establish when the medication was
+            ordered, when it was due, when it was administered and what
+            clinical events occurred before and after administration.
+        </p>
+
+        <p>
+            This may require comparison with:
+        </p>
+
+        <ul>
+
+            <li>
+                nursing observations;
+            </li>
+
+            <li>
+                practitioner notes;
+            </li>
+
+            <li>
+                laboratory results;
+            </li>
+
+            <li>
+                procedure records;
+            </li>
+
+            <li>
+                emergency or deterioration notes; and
+            </li>
+
+            <li>
+                discharge documentation.
+            </li>
+
+        </ul>
+
+        <div class="principle">
+
+            <strong>
+                Medication timing should be placed inside the clinical
+                chronology.
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>6. When Medication Is Withheld</h2>
+
+        <p>
+            Medication records may show that a medication was not given.
+        </p>
+
+        <p>
+            The reason may sometimes be documented, such as a clinical
+            decision, a change in the treatment plan, a contraindication,
+            a patient's refusal or another recorded circumstance.
+        </p>
+
+        <p>
+            Where the reason is not clear, the absence of administration
+            should become an investigation question.
+        </p>
+
+        <div class="investigation-question">
+
+            <strong>Ask:</strong>
+
+            <p>
+                Was the medication deliberately withheld, inadvertently
+                omitted, delayed, refused by the patient, or simply
+                incompletely documented?
+            </p>
+
+        </div>
+
+        <p>
+            The available evidence should be examined before reaching a
+            conclusion.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>7. Medication Changes</h2>
+
+        <p>
+            Medication orders may change as the patient's condition changes.
+        </p>
+
+        <p>
+            A practitioner may start, stop, increase, decrease or substitute
+            medication.
+        </p>
+
+        <p>
+            The practitioner investigating the case should identify these
+            changes and determine where they fit in the chronology.
+        </p>
+
+        <div class="record-demo">
+
+            <div class="record-header">
+
+                <strong>FICTIONAL MEDICATION CHANGE LOG</strong>
+
+                Patient: Patient A
+
+            </div>
+
+            <div class="record-body">
+
+                <div class="record-section">
+
+                    <h3>08:30</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Initial order
+                        </div>
+
+                        <div>
+                            Analgesic A commenced.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>12:45</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Clinical review
+                        </div>
+
+                        <div>
+                            Patient reports continuing abdominal pain.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>13:00</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Medication change
+                        </div>
+
+                        <div>
+                            Treatment plan amended.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p>
+            The important point is not simply that the medication changed.
+            The practitioner must investigate the clinical circumstances
+            surrounding the change.
+        </p>
+
+    </section>
+
+
+    <section id="investigation">
+
+        <h2>8. Interrogating Medication Records</h2>
+
+        <p>
+            Medication records should be examined systematically.
+        </p>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 1 — What was prescribed?</strong>
+
+            <p>
+                Identify the medication, dose, route and relevant timing.
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 2 — What was administered?</strong>
+
+            <p>
+                Determine whether there is contemporaneous evidence that
+                the medication was actually given.
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 3 — When was it administered?</strong>
+
+            <p>
+                Compare the administration time with the prescribed or
+                scheduled time.
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 4 — Who administered it?</strong>
+
+            <p>
+                Identify the recorded person responsible for administration
+                where the record provides that information.
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 5 — Was anything withheld or delayed?</strong>
+
+            <p>
+                Identify unexplained omissions, delays or changes.
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 6 — What happened afterwards?</strong>
+
+            <p>
+                Compare the medication event with the patient's symptoms,
+                observations and subsequent clinical decisions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>9. Medication Records and the Wider Medical Record</h2>
+
+        <p>
+            Medication documentation should not be analysed in isolation.
+        </p>
+
+        <p>
+            A medication entry may only become meaningful when compared with
+            other parts of the record.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Example:</strong>
+
+            <p>
+                If a medication was recorded as administered at 13:30,
+                examine what the patient's condition was at that time and
+                what happened during the following period.
+            </p>
+
+            <p>
+                The practitioner may need to compare the medication record
+                with nursing observations, practitioner notes and subsequent
+                treatment.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>10. The Practitioner Test</h2>
+
+        <p>
+            Before moving to the next category of medical record, ask:
+        </p>
+
+        <div class="principle">
+
+            <strong>
+                Can I distinguish between what was prescribed, what was
+                actually administered, when it was administered, and what
+                clinical events occurred around the medication decision?
+            </strong>
+
+        </div>
+
+        <p>
+            If not, further documentary investigation is required.
+        </p>
+
+    </section>
+
+
+    <section class="case-law">
+
+        <h2>Legal and Evidentiary Note</h2>
+
+        <p>
+            Medication records are part of the documentary evidence from
+            which treatment may be reconstructed.
+        </p>
+
+        <p>
+            An apparent omission, delay or discrepancy should be investigated
+            in the context of the complete record before a legal conclusion
+            is drawn.
+        </p>
+
+        <p>
+            The existence of a medication entry, by itself, does not answer
+            the broader question of whether the treatment provided complied
+            with the applicable standard of care.
+        </p>
+
+    </section>
+
+
+    <nav class="chapter-navigation">
+
+        <a href="nursing-and-observation-records.html">
+            ← Previous: Chapter 3 — Nursing and Observation Records
+        </a>
+
+        <a href="practitioner-notes-and-clinical-decisions.html">
+            Next: Chapter 5 — Practitioner Notes and Clinical Decisions →
+        </a>
+
+    </nav>
+
+</main>
+
+
+<footer class="site-footer">
+
+    Medical Negligence Practitioner Library
+
+</footer>
+
+
+</body>
+</html>
