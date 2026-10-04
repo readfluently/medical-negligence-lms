@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 2 — The Admission Record</title>
+
+    <link rel="stylesheet" href="../../../css/book.css">
+
+    <style>
+        .record-demo {
+            background: #fafafa;
+            border: 1px solid #d8d2ca;
+            margin: 30px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .record-header {
+            background: #17233c;
+            color: white;
+            padding: 18px 22px;
+        }
+
+        .record-header strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .record-body {
+            padding: 22px;
+        }
+
+        .record-section {
+            border-bottom: 1px solid #e2ded8;
+            padding: 18px 0;
+        }
+
+        .record-section:last-child {
+            border-bottom: none;
+        }
+
+        .record-section h3 {
+            margin-top: 0;
+            color: #17233c;
+            font-size: 18px;
+        }
+
+        .record-row {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            padding: 10px 0;
+            gap: 15px;
+        }
+
+        .record-label {
+            font-weight: bold;
+            color: #5b4b8a;
+        }
+
+        .record-note {
+            background: #f0edf7;
+            border-left: 5px solid #5b4b8a;
+            padding: 18px 20px;
+            margin: 25px 0;
+        }
+
+        .investigation-question {
+            background: #fff;
+            border: 1px solid #ddd7cf;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .investigation-question strong {
+            color: #5b4b8a;
+        }
+
+        .highlight {
+            background: #fffdf5;
+            border: 1px solid #ddd7cf;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 650px) {
+            .record-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="book-label">
+        BOOK 3 — THE MEDICAL RECORD
+    </div>
+
+    <h1>Chapter 2 — The Admission Record</h1>
+
+    <p>
+        Reading the first clinical document as evidence of the patient's entry into care
+    </p>
+
+</header>
+
+
+<nav class="book-nav">
+
+    <a href="../index.html">
+        Book Home
+    </a>
+
+    <a href="#purpose">
+        Purpose
+    </a>
+
+    <a href="#record-example">
+        Record Example
+    </a>
+
+    <a href="#investigation">
+        Investigation
+    </a>
+
+</nav>
+
+
+<main class="book-content">
+
+    <section id="purpose">
+
+        <h2>1. What Is the Admission Record?</h2>
+
+        <p>
+            The admission record is often one of the first significant
+            documents created when a patient enters a hospital or healthcare
+            facility.
+        </p>
+
+        <p>
+            It may record information about why the patient presented,
+            the patient's condition on arrival, relevant history,
+            initial observations, preliminary assessments and the initial
+            plan of care.
+        </p>
+
+        <p>
+            For the medical-negligence practitioner, the admission record
+            can therefore provide an important starting point for
+            reconstructing the clinical circumstances in which subsequent
+            decisions were made.
+        </p>
+
+        <div class="principle">
+
+            <strong>Practitioner's Principle</strong><br><br>
+
+            The admission record establishes the clinical starting point.
+            Before judging what happened later, establish what was known
+            when the patient first entered care.
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>2. Why the Admission Record Matters</h2>
+
+        <p>
+            A negligence investigation often focuses heavily on what happened
+            later in the patient's treatment.
+        </p>
+
+        <p>
+            That can create a risk of hindsight.
+        </p>
+
+        <p>
+            The admission record helps the practitioner return to the
+            information available at the beginning of the clinical episode.
+        </p>
+
+        <p>
+            It may help establish:
+        </p>
+
+        <ul>
+
+            <li>
+                the patient's presenting complaint;
+            </li>
+
+            <li>
+                the symptoms reported at admission;
+            </li>
+
+            <li>
+                relevant medical history;
+            </li>
+
+            <li>
+                initial observations;
+            </li>
+
+            <li>
+                the urgency or apparent severity of the presentation;
+            </li>
+
+            <li>
+                the initial clinical assessment; and
+            </li>
+
+            <li>
+                the initial treatment or investigation plan.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <section>
+
+        <h2>3. A Fictional Admission Record</h2>
+
+        <p>
+            The following is a fictional reconstruction created for training
+            purposes. It does not represent a real patient or healthcare
+            facility.
+        </p>
+
+
+        <div class="record-demo" id="record-example">
+
+            <div class="record-header">
+
+                <strong>FICTIONAL HOSPITAL ADMISSION RECORD</strong>
+
+                Patient: Patient A
+
+                <br>
+
+                Date of Admission: 14 March
+
+                <br>
+
+                Admission Time: 08:00
+
+            </div>
+
+
+            <div class="record-body">
+
+                <div class="record-section">
+
+                    <h3>Patient Information</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Age
+                        </div>
+
+                        <div>
+                            46 years
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Sex
+                        </div>
+
+                        <div>
+                            Female
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>Presenting Complaint</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Complaint
+                        </div>
+
+                        <div>
+                            Abdominal pain and vomiting.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Duration
+                        </div>
+
+                        <div>
+                            Approximately 12 hours.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>History</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Patient Report
+                        </div>
+
+                        <div>
+                            Patient reports worsening abdominal pain
+                            overnight with repeated vomiting.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>Initial Observations</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Temperature
+                        </div>
+
+                        <div>
+                            37.9 °C
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Pulse
+                        </div>
+
+                        <div>
+                            104 beats per minute
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Blood Pressure
+                        </div>
+
+                        <div>
+                            108/68 mmHg
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>Initial Plan</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Investigations
+                        </div>
+
+                        <div>
+                            Blood tests requested.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Treatment
+                        </div>
+
+                        <div>
+                            Initial supportive treatment commenced.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Review
+                        </div>
+
+                        <div>
+                            Further clinical assessment planned.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="record-note">
+
+            <strong>Do not read this record only for what it says.</strong>
+
+            <p>
+                Ask what the recorded information means for the clinical
+                situation at the time.
+            </p>
+
+            <p>
+                The important question is not simply whether the patient
+                was documented as having abdominal pain. The practitioner
+                must consider what information was available and what
+                decisions followed from that information.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>4. Establishing the Patient's Starting Condition</h2>
+
+        <p>
+            The admission record can help establish the patient's condition
+            at the beginning of the relevant clinical episode.
+        </p>
+
+        <p>
+            This is important because later deterioration must be considered
+            against the patient's initial presentation.
+        </p>
+
+        <p>
+            A patient who arrives already seriously ill presents a different
+            evidentiary question from a patient who initially appears stable
+            and subsequently deteriorates.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Litigation Question</strong>
+
+            <p>
+                What was the patient's condition at the point when the
+                healthcare provider first assumed responsibility for care?
+            </p>
+
+        </div>
+
+        <p>
+            The answer should be supported by the contemporaneous record
+            wherever possible.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>5. The Importance of Timing</h2>
+
+        <p>
+            Timing is often one of the most important features of an
+            admission record.
+        </p>
+
+        <p>
+            The practitioner should identify when the patient arrived,
+            when observations were taken, when the patient was assessed,
+            when investigations were requested and when treatment began.
+        </p>
+
+        <p>
+            These times can later be compared with other documents.
+        </p>
+
+        <ul>
+
+            <li>
+                nursing notes;
+            </li>
+
+            <li>
+                practitioner progress notes;
+            </li>
+
+            <li>
+                laboratory results;
+            </li>
+
+            <li>
+                medication records;
+            </li>
+
+            <li>
+                observation charts; and
+            </li>
+
+            <li>
+                procedure or theatre records.
+            </li>
+
+        </ul>
+
+        <div class="principle">
+
+            <strong>
+                A chronology is built by connecting documents, not by reading
+                each document in isolation.
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section id="investigation">
+
+        <h2>6. Interrogating the Admission Record</h2>
+
+        <p>
+            Once the admission record has been identified, the practitioner
+            should move from reading to investigation.
+        </p>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 1 — Presentation</strong>
+
+            <p>
+                What exactly did the patient present with?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 2 — Duration</strong>
+
+            <p>
+                How long had the symptoms or problem existed before the
+                patient entered the healthcare system?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 3 — Initial Condition</strong>
+
+            <p>
+                What do the recorded observations tell us about the
+                patient's condition at the relevant time?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 4 — Information Available</strong>
+
+            <p>
+                What information was available to the healthcare provider
+                when the initial assessment was made?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 5 — Initial Response</strong>
+
+            <p>
+                What investigations, treatment or monitoring were initiated?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 6 — Missing Information</strong>
+
+            <p>
+                What information would ordinarily be expected but is not
+                recorded in the document?
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>7. The Admission Record and Hindsight</h2>
+
+        <p>
+            Medical-negligence litigation is often examined after the
+            patient's outcome is known.
+        </p>
+
+        <p>
+            That creates a danger of judging an earlier clinical decision
+            using information that became available only later.
+        </p>
+
+        <p>
+            The admission record can help prevent that error by identifying
+            the information available at the beginning of the episode.
+        </p>
+
+        <div class="principle">
+
+            <strong>Practitioner's Principle</strong><br><br>
+
+            Ask what the practitioner knew, or reasonably ought to have
+            known, at the relevant time — not merely what became obvious
+            after the patient's condition changed.
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>8. Comparing the Admission Record With the Patient's Account</h2>
+
+        <p>
+            The admission record should be compared with the patient's
+            account obtained during the initial consultation.
+        </p>
+
+        <p>
+            The two accounts may correspond closely, or they may differ.
+        </p>
+
+        <p>
+            A difference does not automatically establish that either
+            account is false.
+        </p>
+
+        <p>
+            Instead, the discrepancy should become an investigation point.
+        </p>
+
+        <div class="investigation-question">
+
+            <strong>For example:</strong>
+
+            <p>
+                If the patient recalls reporting severe symptoms on arrival,
+                but the admission record describes only mild symptoms,
+                determine what other evidence may assist in resolving the
+                difference.
+            </p>
+
+        </div>
+
+        <p>
+            Other nursing records, triage documents, observations,
+            witness evidence and subsequent clinical notes may assist.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>9. Building the First Chronology</h2>
+
+        <p>
+            The admission record should be incorporated into the developing
+            medical chronology.
+        </p>
+
+        <div class="checklist">
+
+            <strong>Record the following:</strong>
+
+            <ul>
+
+                <li>
+                    Date and time of admission
+                </li>
+
+                <li>
+                    Presenting complaint
+                </li>
+
+                <li>
+                    Duration of symptoms
+                </li>
+
+                <li>
+                    Relevant history
+                </li>
+
+                <li>
+                    Initial observations
+                </li>
+
+                <li>
+                    Initial assessment
+                </li>
+
+                <li>
+                    Investigations requested
+                </li>
+
+                <li>
+                    Initial treatment
+                </li>
+
+                <li>
+                    Planned review or monitoring
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>10. The Practitioner Test</h2>
+
+        <p>
+            Before moving to the next category of medical record, ask:
+        </p>
+
+        <div class="principle">
+
+            <strong>
+                Can I describe the patient's condition and the information
+                available at the beginning of the clinical episode without
+                relying on hindsight?
+            </strong>
+
+        </div>
+
+        <p>
+            If not, return to the admission record and identify what
+            additional documents are required.
+        </p>
+
+    </section>
+
+
+    <section class="case-law">
+
+        <h2>Legal and Evidentiary Note</h2>
+
+        <p>
+            The admission record is documentary evidence. Its significance
+            depends on the circumstances of the case and must be considered
+            together with the other evidence.
+        </p>
+
+        <p>
+            The practitioner should distinguish between what is expressly
+            recorded, what may reasonably be inferred, and what remains
+            uncertain.
+        </p>
+
+        <p>
+            The record should therefore be used to build the factual
+            foundation of the investigation rather than treated as an
+            automatic answer to the legal question of negligence.
+        </p>
+
+    </section>
+
+
+    <nav class="chapter-navigation">
+
+        <a href="what-is-the-medical-record.html">
+            ← Previous: Chapter 1 — What Is the Medical Record?
+        </a>
+
+        <a href="nursing-and-observation-records.html">
+            Next: Chapter 3 — Nursing and Observation Records →
+        </a>
+
+    </nav>
+
+</main>
+
+
+<footer class="site-footer">
+
+    Medical Negligence Practitioner Library
+
+</footer>
+
+
+</body>
+</html>
