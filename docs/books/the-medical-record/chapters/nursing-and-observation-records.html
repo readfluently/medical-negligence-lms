@@ -13,4 +13,887 @@
             background: #fafafa;
             border: 1px solid #d8d2ca;
             margin: 30px 0;
-            font-family: Arial
+            font-family: Arial, sans-serif;
+            overflow-x: auto;
+        }
+
+        .record-header {
+            background: #17233c;
+            color: white;
+            padding: 18px 22px;
+        }
+
+        .record-header strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .record-body {
+            padding: 22px;
+        }
+
+        .record-section {
+            border-bottom: 1px solid #e2ded8;
+            padding: 18px 0;
+        }
+
+        .record-section:last-child {
+            border-bottom: none;
+        }
+
+        .record-section h3 {
+            margin-top: 0;
+            color: #17233c;
+            font-size: 18px;
+        }
+
+        .observation-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 620px;
+        }
+
+        .observation-table th,
+        .observation-table td {
+            border: 1px solid #d8d2ca;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .observation-table th {
+            background: #f0edf7;
+            color: #17233c;
+        }
+
+        .observation-table td.alert {
+            font-weight: bold;
+        }
+
+        .nursing-note {
+            border-left: 5px solid #5b4b8a;
+            background: #f0edf7;
+            padding: 18px 20px;
+            margin: 25px 0;
+        }
+
+        .investigation-question {
+            background: #fff;
+            border: 1px solid #ddd7cf;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .investigation-question strong {
+            color: #5b4b8a;
+        }
+
+        .highlight {
+            background: #fffdf5;
+            border: 1px solid #ddd7cf;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .record-row {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            padding: 10px 0;
+            gap: 15px;
+        }
+
+        .record-label {
+            font-weight: bold;
+            color: #5b4b8a;
+        }
+
+        @media (max-width: 650px) {
+            .record-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="book-label">
+        BOOK 3 — THE MEDICAL RECORD
+    </div>
+
+    <h1>Chapter 3 — Nursing and Observation Records</h1>
+
+    <p>
+        Reading bedside documentation, monitoring and changes in the patient's condition
+    </p>
+
+</header>
+
+
+<nav class="book-nav">
+
+    <a href="../index.html">
+        Book Home
+    </a>
+
+    <a href="#nursing-records">
+        Nursing Records
+    </a>
+
+    <a href="#observation-chart">
+        Observation Chart
+    </a>
+
+    <a href="#investigation">
+        Investigation
+    </a>
+
+</nav>
+
+
+<main class="book-content">
+
+    <section id="nursing-records">
+
+        <h2>1. Why Nursing Records Matter</h2>
+
+        <p>
+            Nursing records can provide a detailed account of what happened
+            to a patient between formal practitioner assessments.
+        </p>
+
+        <p>
+            They may record observations, symptoms reported by the patient,
+            changes in condition, medication administration, interventions,
+            communication with practitioners and the patient's response to
+            treatment.
+        </p>
+
+        <p>
+            For the medical-negligence practitioner, these records may
+            therefore provide important evidence about the patient's
+            clinical course.
+        </p>
+
+        <div class="principle">
+
+            <strong>Practitioner's Principle</strong><br><br>
+
+            Do not treat nursing documentation as secondary paperwork.
+            It may contain the most detailed contemporaneous account of
+            how the patient's condition changed over time.
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>2. The Difference Between a Single Assessment and Continuous Monitoring</h2>
+
+        <p>
+            A practitioner may assess a patient at particular points in time.
+        </p>
+
+        <p>
+            Nursing staff may observe and document the patient repeatedly
+            between those assessments.
+        </p>
+
+        <p>
+            This means that nursing records can help reveal changes that
+            would not necessarily appear in a single practitioner note.
+        </p>
+
+        <p>
+            For example, a patient may initially appear relatively stable,
+            but later develop increasing pain, changes in observations,
+            repeated vomiting, altered consciousness or other concerning
+            features.
+        </p>
+
+        <p>
+            The significance of those changes depends on the circumstances
+            of the case and the clinical evidence.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>3. A Fictional Nursing Record</h2>
+
+        <p>
+            The following is a fictional reconstruction created for training
+            purposes. It does not represent a real patient.
+        </p>
+
+
+        <div class="record-demo">
+
+            <div class="record-header">
+
+                <strong>FICTIONAL NURSING PROGRESS RECORD</strong>
+
+                Patient: Patient A
+
+                <br>
+
+                Date: 14 March
+
+            </div>
+
+
+            <div class="record-body">
+
+                <div class="record-section">
+
+                    <h3>08:10 — Initial Nursing Assessment</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Patient's report
+                        </div>
+
+                        <div>
+                            Reports abdominal pain and nausea.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Appearance
+                        </div>
+
+                        <div>
+                            Awake and communicating appropriately.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Action
+                        </div>
+
+                        <div>
+                            Patient settled in treatment area and
+                            practitioner notified.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>10:15 — Nursing Review</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Patient's report
+                        </div>
+
+                        <div>
+                            Continues to report abdominal pain.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Action
+                        </div>
+
+                        <div>
+                            Patient monitored. Further assessment requested.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>11:45 — Change in Condition</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Patient's report
+                        </div>
+
+                        <div>
+                            Reports increasing abdominal pain and weakness.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Appearance
+                        </div>
+
+                        <div>
+                            Appears uncomfortable.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Action
+                        </div>
+
+                        <div>
+                            Practitioner informed.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="record-section">
+
+                    <h3>13:20 — Further Review</h3>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Observation
+                        </div>
+
+                        <div>
+                            Patient remains uncomfortable.
+                        </div>
+
+                    </div>
+
+                    <div class="record-row">
+
+                        <div class="record-label">
+                            Action
+                        </div>
+
+                        <div>
+                            Continued monitoring documented.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="nursing-note">
+
+            <strong>Notice the chronology.</strong>
+
+            <p>
+                The nursing record provides several observations over time.
+                It may therefore reveal a developing pattern rather than
+                simply a single clinical snapshot.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section id="observation-chart">
+
+        <h2>4. The Observation Chart</h2>
+
+        <p>
+            Observation charts are particularly important because they may
+            record measurable changes in a patient's condition.
+        </p>
+
+        <p>
+            Depending on the clinical setting, an observation chart may
+            include temperature, pulse, respiratory rate, blood pressure,
+            oxygen saturation, level of consciousness and other relevant
+            observations.
+        </p>
+
+
+        <div class="record-demo">
+
+            <div class="record-header">
+
+                <strong>FICTIONAL OBSERVATION CHART</strong>
+
+                Patient: Patient A
+
+                <br>
+
+                Date: 14 March
+
+            </div>
+
+
+            <div class="record-body">
+
+                <table class="observation-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Time</th>
+                            <th>Temperature</th>
+                            <th>Pulse</th>
+                            <th>Respiratory Rate</th>
+                            <th>Blood Pressure</th>
+                            <th>Oxygen Saturation</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>08:00</td>
+                            <td>37.9 °C</td>
+                            <td>104</td>
+                            <td>18</td>
+                            <td>108/68</td>
+                            <td>97%</td>
+                        </tr>
+
+                        <tr>
+                            <td>10:00</td>
+                            <td>38.1 °C</td>
+                            <td>108</td>
+                            <td>19</td>
+                            <td>106/66</td>
+                            <td>97%</td>
+                        </tr>
+
+                        <tr>
+                            <td>12:00</td>
+                            <td>38.4 °C</td>
+                            <td>116</td>
+                            <td>22</td>
+                            <td>102/64</td>
+                            <td>96%</td>
+                        </tr>
+
+                        <tr>
+                            <td>14:00</td>
+                            <td>38.7 °C</td>
+                            <td>122</td>
+                            <td>24</td>
+                            <td>98/60</td>
+                            <td>95%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <strong>Important:</strong>
+
+            <p>
+                A table of observations does not, by itself, establish
+                negligence.
+            </p>
+
+            <p>
+                The practitioner must determine the clinical significance
+                of the observations, what was known at the relevant time,
+                what response occurred, and what the applicable standard
+                of care required in the circumstances.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>5. Trends Matter</h2>
+
+        <p>
+            One isolated observation may have limited significance.
+        </p>
+
+        <p>
+            A series of observations may reveal a trend.
+        </p>
+
+        <p>
+            The practitioner should therefore avoid reading observation
+            values independently of the surrounding chronology.
+        </p>
+
+        <p>
+            Ask:
+        </p>
+
+        <ul>
+
+            <li>
+                Did the patient's condition remain stable?
+            </li>
+
+            <li>
+                Did the observations change?
+            </li>
+
+            <li>
+                How quickly did they change?
+            </li>
+
+            <li>
+                Was the change communicated?
+            </li>
+
+            <li>
+                Was the patient reassessed?
+            </li>
+
+            <li>
+                Was treatment changed?
+            </li>
+
+        </ul>
+
+        <div class="principle">
+
+            <strong>
+                The evidentiary significance may lie in the pattern,
+                not in a single number.
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>6. Nursing Notes and Communication</h2>
+
+        <p>
+            Nursing documentation may also record communication between
+            members of the healthcare team.
+        </p>
+
+        <p>
+            Entries may indicate that a practitioner was informed of a
+            patient's deterioration or that further review was requested.
+        </p>
+
+        <p>
+            Such entries should be examined carefully.
+        </p>
+
+        <div class="investigation-question">
+
+            <strong>Ask:</strong>
+
+            <p>
+                What was communicated, when was it communicated, to whom,
+                and what happened afterwards?
+            </p>
+
+        </div>
+
+        <p>
+            The answer may require comparison with practitioner notes,
+            medication records, observation charts and other documents.
+        </p>
+
+    </section>
+
+
+    <section id="investigation">
+
+        <h2>7. Interrogating Nursing and Observation Records</h2>
+
+        <p>
+            The practitioner should move beyond simply extracting
+            information from the nursing records.
+        </p>
+
+        <p>
+            The records should be interrogated for their evidentiary
+            significance.
+        </p>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 1 — Change</strong>
+
+            <p>
+                What changed in the patient's condition?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 2 — Timing</strong>
+
+            <p>
+                When did the change occur?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 3 — Recognition</strong>
+
+            <p>
+                When was the change recognised and documented?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 4 — Communication</strong>
+
+            <p>
+                Was the change communicated to the responsible practitioner?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 5 — Response</strong>
+
+            <p>
+                What clinical response followed?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 6 — Delay</strong>
+
+            <p>
+                Is there an unexplained period between recognition,
+                communication and response?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 7 — Consistency</strong>
+
+            <p>
+                Do the nursing records correspond with the practitioner
+                notes and other clinical documents?
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>8. Silence and Missing Entries</h2>
+
+        <p>
+            A medical record may contain periods where documentation is
+            sparse or apparently absent.
+        </p>
+
+        <p>
+            That absence should be identified, but it should not automatically
+            be converted into a factual conclusion.
+        </p>
+
+        <p>
+            The practitioner should ask whether another document may explain
+            the apparent gap.
+        </p>
+
+        <p>
+            For example, relevant information may appear in another nursing
+            record, a medication administration record, a practitioner note,
+            an observation chart or a separate clinical system.
+        </p>
+
+        <div class="nursing-note">
+
+            <strong>Practitioner's Caution</strong>
+
+            <p>
+                An undocumented event and an event that did not occur are
+                not necessarily the same proposition.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>9. Building the Chronology From Nursing Records</h2>
+
+        <p>
+            Nursing and observation records should be incorporated into the
+            wider medical chronology.
+        </p>
+
+        <div class="checklist">
+
+            <strong>Capture:</strong>
+
+            <ul>
+
+                <li>
+                    Time of observation
+                </li>
+
+                <li>
+                    Patient's reported symptoms
+                </li>
+
+                <li>
+                    Objective observations
+                </li>
+
+                <li>
+                    Changes in condition
+                </li>
+
+                <li>
+                    Nursing interventions
+                </li>
+
+                <li>
+                    Communication with practitioners
+                </li>
+
+                <li>
+                    Practitioner response
+                </li>
+
+                <li>
+                    Subsequent observations
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>10. The Practitioner Test</h2>
+
+        <p>
+            Before moving to the next category of medical record, ask:
+        </p>
+
+        <div class="principle">
+
+            <strong>
+                Have I identified how the patient's condition changed over
+                time, who knew about the change, when they knew about it,
+                and what response followed?
+            </strong>
+
+        </div>
+
+        <p>
+            If not, the nursing and observation records have not yet been
+            fully interrogated.
+        </p>
+
+    </section>
+
+
+    <section class="case-law">
+
+        <h2>Legal and Evidentiary Note</h2>
+
+        <p>
+            Nursing and observation records form part of the documentary
+            evidence from which the patient's clinical course may be
+            reconstructed.
+        </p>
+
+        <p>
+            Their evidentiary significance must be assessed in the context
+            of the complete record and the other evidence available in the
+            matter.
+        </p>
+
+        <p>
+            The practitioner should distinguish carefully between what is
+            expressly documented, what can reasonably be inferred, and what
+            requires further evidence.
+        </p>
+
+    </section>
+
+
+    <nav class="chapter-navigation">
+
+        <a href="admission-record.html">
+            ← Previous: Chapter 2 — The Admission Record
+        </a>
+
+        <a href="medication-records.html">
+            Next: Chapter 4 — Medication Records →
+        </a>
+
+    </nav>
+
+</main>
+
+
+<footer class="site-footer">
+
+    Medical Negligence Practitioner Library
+
+</footer>
+
+
+</body>
+</html>
