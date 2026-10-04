@@ -1,163 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Book 1 — The Client Walks Into Your Office</title>
 
     <link rel="stylesheet" href="../../../css/book.css">
+
+    <style>
+
+        /* =========================================
+           BOOK 1 — OPENING VOLUME
+           ========================================= */
+
+        .book-cover {
+            background: #17233c;
+            color: white;
+            padding: 80px 30px 90px;
+            text-align: center;
+            border-bottom: 6px solid #7652a8;
+        }
+
+        .book-number {
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.8rem;
+            color: #cfc3df;
+            margin-bottom: 25px;
+        }
+
+        .book-title {
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: clamp(2.6rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            font-weight: 500;
+        }
+
+        .book-subtitle {
+            max-width: 650px;
+            margin: 28px auto 0;
+            font-size: 1.15rem;
+            color: #d8dce5;
+        }
+
+        .book-cover-line {
+            width: 70px;
+            height: 3px;
+            background: #9a78c2;
+            margin: 35px auto;
+        }
+
+
+        /* =========================================
+           INTRODUCTION
+           ========================================= */
+
+        .opening {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 65px 20px 40px;
+        }
+
+        .opening-label {
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.78rem;
+            font-weight: bold;
+            color: #7652a8;
+            margin-bottom: 15px;
+        }
+
+        .opening h2 {
+            border: none;
+            padding: 0;
+            margin: 0 0 25px;
+            font-size: 2rem;
+        }
+
+        .opening p {
+            font-size: 1.08rem;
+            color: #444957;
+        }
+
+
+        /* =========================================
+           CENTRAL PRINCIPLE
+           ========================================= */
+
+        .principle {
+            max-width: 850px;
+            margin: 20px auto 65px;
+            padding: 35px 40px;
+            border-top: 1px solid #dedbe3;
+            border-bottom: 1px solid #dedbe3;
+            text-align: center;
+        }
+
+        .principle-label {
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 0.75rem;
+            color: #687080;
+            margin-bottom: 15px;
+        }
+
+        .principle p {
+            margin: 0;
+            font-size: 1.35rem;
+            color: #5b3d85;
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           CHAPTER JOURNEY
+           ========================================= */
+
+        .journey {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .journey-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .journey-heading h2 {
+            border: none;
+            padding: 0;
+            margin: 0 0 10px;
+        }
+
+        .journey-heading p {
+            color: #687080;
+            margin: 0;
+        }
+
+
+        /* =========================================
+           CHAPTERS
+           ========================================= */
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 25px;
+
+            padding: 28px 0;
+
+            border-top: 1px solid #dedbe3;
+
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .chapter:last-child {
+            border-bottom: 1px solid #dedbe3;
+        }
+
+        .chapter-number {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.8rem;
+            color: #7652a8;
+        }
+
+        .chapter h3 {
+            margin: 0 0 7px;
+            color: #17233c;
+            font-size: 1.25rem;
+        }
+
+        .chapter p {
+            margin: 0;
+            color: #687080;
+            font-size: 0.98rem;
+        }
+
+        .chapter:hover h3 {
+            color: #7652a8;
+        }
+
+
+        /* =========================================
+           CLOSING
+           ========================================= */
+
+        .closing {
+            background: #eee8f7;
+            padding: 55px 25px;
+            text-align: center;
+        }
+
+        .closing-inner {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .closing h2 {
+            border: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+
+        .closing p {
+            color: #4c4658;
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 650px) {
+
+            .book-cover {
+                padding: 60px 22px 65px;
+            }
+
+            .book-title {
+                font-size: 2.6rem;
+            }
+
+            .opening {
+                padding-top: 45px;
+            }
+
+            .principle {
+                padding: 30px 20px;
+            }
+
+            .principle p {
+                font-size: 1.15rem;
+            }
+
+            .chapter {
+                grid-template-columns: 45px 1fr;
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-<header class="book-header">
 
-    <a href="../../../index.html" class="back-link">
-        ← Medical Negligence Practitioner Library
-    </a>
+<!-- =========================================
+     BOOK COVER
+     ========================================= -->
 
-    <h1>Book 1</h1>
+<header class="book-cover">
 
-    <h2>The Client Walks Into Your Office</h2>
+    <div class="book-number">
+        Book 1
+    </div>
 
-    <p>
+    <h1 class="book-title">
+        The Client Walks Into Your Office
+    </h1>
+
+    <div class="book-cover-line"></div>
+
+    <p class="book-subtitle">
         First Consultation and Initial Investigation
     </p>
 
 </header>
 
-<main class="book-container">
 
-    <section class="book-introduction">
+<!-- =========================================
+     OPENING
+     ========================================= -->
 
-        <h2>About This Book</h2>
+<main>
+
+<section class="opening">
+
+    <div class="opening-label">
+        The Starting Point
+    </div>
+
+    <h2>
+        Before You Decide There Is a Case
+    </h2>
+
+    <p>
+        A medical negligence matter does not begin with an expert report,
+        a summons, or an allegation that a practitioner was negligent.
+    </p>
+
+    <p>
+        It begins with a person walking into your office and telling you
+        what happened.
+    </p>
+
+    <p>
+        At this stage, the task is not to decide the case.
+        The task is to investigate the story.
+    </p>
+
+    <p>
+        You must establish what happened, when it happened, who was involved,
+        what the patient's condition was before treatment, what changed
+        afterwards, what records exist, and what remains unknown.
+    </p>
+
+</section>
+
+
+<!-- =========================================
+     CENTRAL PRINCIPLE
+     ========================================= -->
+
+<section class="principle">
+
+    <div class="principle-label">
+        Practitioner’s Principle
+    </div>
+
+    <p>
+        Investigate the story before deciding the case.
+    </p>
+
+</section>
+
+
+<!-- =========================================
+     CHAPTER JOURNEY
+     ========================================= -->
+
+<section class="journey">
+
+    <div class="journey-heading">
+
+        <h2>
+            The Investigation
+        </h2>
 
         <p>
-            This book begins at the point where the potential client
-            walks into your office.
+            The first stage is to build the factual foundation.
         </p>
 
-        <p>
-            The task is not to decide immediately whether the practitioner
-            was negligent. The task is to investigate the story, establish
-            the facts, identify what remains unknown, and build the
-            foundation for the legal analysis that follows.
-        </p>
-
-        <p>
-            <strong>Investigate the story before deciding the case.</strong>
-        </p>
-
-    </section>
+    </div>
 
 
-    <section class="chapter-list">
+    <a href="chapters/first-consultation.html" class="chapter">
 
-        <h2>Chapters</h2>
+        <div class="chapter-number">
+            01
+        </div>
 
+        <div>
 
-        <a href="chapters/first-consultation.html" class="chapter-card">
-
-            <h3>Chapter 1 — The First Consultation</h3>
+            <h3>
+                The First Consultation
+            </h3>
 
             <p>
                 What you are really trying to build from the first meeting.
             </p>
 
-        </a>
+        </div>
+
+    </a>
 
 
-        <a href="chapters/medical-chronology.html" class="chapter-card">
+    <a href="chapters/medical-chronology.html" class="chapter">
 
-            <h3>The Medical Chronology</h3>
+        <div class="chapter-number">
+            02
+        </div>
+
+        <div>
+
+            <h3>
+                The Medical Chronology
+            </h3>
 
             <p>
                 Building the timeline of treatment and events.
             </p>
 
-        </a>
+        </div>
+
+    </a>
 
 
-        <a href="chapters/clinical-decisions.html" class="chapter-card">
+    <a href="chapters/clinical-decisions.html" class="chapter">
 
-            <h3>The Sequence of Clinical Decisions</h3>
+        <div class="chapter-number">
+            03
+        </div>
+
+        <div>
+
+            <h3>
+                The Sequence of Clinical Decisions
+            </h3>
 
             <p>
                 Understanding what happened and when decisions were made.
             </p>
 
-        </a>
+        </div>
+
+    </a>
 
 
-        <a href="chapters/injury.html" class="chapter-card">
+    <a href="chapters/injury.html" class="chapter">
 
-            <h3>The Development of the Injury</h3>
+        <div class="chapter-number">
+            04
+        </div>
+
+        <div>
+
+            <h3>
+                The Development of the Injury
+            </h3>
 
             <p>
                 Tracing the patient's condition through the clinical story.
             </p>
 
-        </a>
+        </div>
+
+    </a>
 
 
-        <a href="chapters/causation.html" class="chapter-card">
+    <a href="chapters/causation.html" class="chapter">
 
-            <h3>Causation</h3>
+        <div class="chapter-number">
+            05
+        </div>
+
+        <div>
+
+            <h3>
+                Causation
+            </h3>
 
             <p>
                 Connecting the alleged departure from proper care to the injury.
             </p>
 
-        </a>
+        </div>
+
+    </a>
 
 
-        <a href="chapters/prescription.html" class="chapter-card">
+    <a href="chapters/prescription.html" class="chapter">
 
-            <h3>Prescription</h3>
+        <div class="chapter-number">
+            06
+        </div>
+
+        <div>
+
+            <h3>
+                Prescription
+            </h3>
 
             <p>
-                Identifying time-related legal issues.
+                Identifying time-related legal issues at the beginning of the investigation.
             </p>
 
-        </a>
+        </div>
+
+    </a>
 
 
-        <a href="chapters/statutory-notice.html" class="chapter-card">
+    <a href="chapters/statutory-notice.html" class="chapter">
 
-            <h3>Statutory Notice</h3>
+        <div class="chapter-number">
+            07
+        </div>
+
+        <div>
+
+            <h3>
+                Statutory Notice
+            </h3>
 
             <p>
                 Considering notice requirements in claims involving organs of state.
             </p>
 
-        </a>
+        </div>
+
+    </a>
 
 
-        <a href="chapters/procedural-steps.html" class="chapter-card">
+    <a href="chapters/procedural-steps.html" class="chapter">
 
-            <h3>Procedural Steps</h3>
+        <div class="chapter-number">
+            08
+        </div>
+
+        <div>
+
+            <h3>
+                Procedural Steps
+            </h3>
 
             <p>
                 Mapping the litigation and investigation process.
             </p>
 
-        </a>
+        </div>
+
+    </a>
 
 
-        <a href="chapters/expert-opinions.html" class="chapter-card">
+    <a href="chapters/expert-opinions.html" class="chapter">
 
-            <h3>Expert Opinions</h3>
+        <div class="chapter-number">
+            09
+        </div>
+
+        <div>
+
+            <h3>
+                Expert Opinions
+            </h3>
 
             <p>
                 Identifying the specialised questions that require expert evidence.
             </p>
 
-        </a>
+        </div>
 
-    </section>
+    </a>
+
+</section>
+
+
+<!-- =========================================
+     CLOSING
+     ========================================= -->
+
+<section class="closing">
+
+    <div class="closing-inner">
+
+        <h2>
+            The Objective of Book 1
+        </h2>
+
+        <p>
+            By the end of this stage, you should not necessarily have
+            decided whether the practitioner was negligent.
+        </p>
+
+        <p>
+            You should have something more valuable:
+            a structured understanding of the story, the evidence,
+            the unanswered questions, and the issues that must be investigated next.
+        </p>
+
+    </div>
+
+</section>
 
 </main>
+
 
 <footer>
 
@@ -167,5 +586,7 @@
 
 </footer>
 
+
 </body>
+
 </html>
