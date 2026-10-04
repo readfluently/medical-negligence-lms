@@ -1,0 +1,595 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 1 — What Is the Medical Record?</title>
+
+    <link rel="stylesheet" href="../../../css/book.css">
+
+    <style>
+        .record-demo {
+            background: #fafafa;
+            border: 1px solid #d8d2ca;
+            margin: 30px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .record-header {
+            background: #17233c;
+            color: white;
+            padding: 18px 22px;
+        }
+
+        .record-header strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .record-body {
+            padding: 22px;
+        }
+
+        .record-row {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            border-bottom: 1px solid #e2ded8;
+            padding: 12px 0;
+            gap: 15px;
+        }
+
+        .record-row:last-child {
+            border-bottom: none;
+        }
+
+        .record-label {
+            font-weight: bold;
+            color: #5b4b8a;
+        }
+
+        .record-note {
+            background: #f0edf7;
+            border-left: 5px solid #5b4b8a;
+            padding: 18px 20px;
+            margin: 25px 0;
+        }
+
+        .investigation-question {
+            background: #fff;
+            border: 1px solid #ddd7cf;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .investigation-question strong {
+            color: #5b4b8a;
+        }
+
+        @media (max-width: 650px) {
+            .record-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="book-label">
+        BOOK 3 — THE MEDICAL RECORD
+    </div>
+
+    <h1>Chapter 1 — What Is the Medical Record?</h1>
+
+    <p>
+        Understanding the record before learning how to interrogate it
+    </p>
+
+</header>
+
+
+<nav class="book-nav">
+
+    <a href="../index.html">
+        Book Home
+    </a>
+
+    <a href="#understanding">
+        Understanding the Record
+    </a>
+
+    <a href="#record-example">
+        Record Example
+    </a>
+
+    <a href="#investigation">
+        Investigation
+    </a>
+
+</nav>
+
+
+<main class="book-content">
+
+    <section id="understanding">
+
+        <h2>1. The Medical Record Is More Than a File</h2>
+
+        <p>
+            A medical record is not simply a collection of pages kept by a
+            hospital or practitioner.
+        </p>
+
+        <p>
+            For the medical-negligence practitioner, it can provide a
+            chronological documentary account of the patient's clinical
+            journey and the decisions made during that journey.
+        </p>
+
+        <p>
+            It may contain evidence about the patient's condition,
+            assessments, investigations, treatment, monitoring,
+            communication, referrals, procedures and discharge.
+        </p>
+
+        <div class="principle">
+
+            <strong>Practitioner's Principle</strong><br><br>
+
+            Read the medical record as evidence of events and decisions,
+            not merely as administrative paperwork.
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>2. What Can the Record Tell You?</h2>
+
+        <p>
+            Different parts of a medical record may answer different
+            questions.
+        </p>
+
+        <ul>
+
+            <li>
+                What was the patient's condition when care began?
+            </li>
+
+            <li>
+                What symptoms or complaints were recorded?
+            </li>
+
+            <li>
+                What assessments were performed?
+            </li>
+
+            <li>
+                What investigations were requested?
+            </li>
+
+            <li>
+                What treatment was provided?
+            </li>
+
+            <li>
+                What changes occurred in the patient's condition?
+            </li>
+
+            <li>
+                What decisions were made in response?
+            </li>
+
+            <li>
+                When were those decisions made?
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <section>
+
+        <h2>3. A Simple Record Example</h2>
+
+        <p>
+            The following is a fictional reconstruction created for
+            training purposes. It does not represent a real patient.
+        </p>
+
+
+        <div class="record-demo" id="record-example">
+
+            <div class="record-header">
+
+                <strong>FICTIONAL CLINICAL RECORD</strong>
+
+                Patient: Patient A
+
+                <br>
+
+                Date: 14 March
+
+            </div>
+
+
+            <div class="record-body">
+
+                <div class="record-row">
+
+                    <div class="record-label">
+                        08:00
+                    </div>
+
+                    <div>
+                        Patient presents with abdominal pain and vomiting.
+                    </div>
+
+                </div>
+
+
+                <div class="record-row">
+
+                    <div class="record-label">
+                        08:20
+                    </div>
+
+                    <div>
+                        Initial clinical assessment documented.
+                    </div>
+
+                </div>
+
+
+                <div class="record-row">
+
+                    <div class="record-label">
+                        09:00
+                    </div>
+
+                    <div>
+                        Blood tests requested.
+                    </div>
+
+                </div>
+
+
+                <div class="record-row">
+
+                    <div class="record-label">
+                        11:30
+                    </div>
+
+                    <div>
+                        Patient reports increasing abdominal pain.
+                    </div>
+
+                </div>
+
+
+                <div class="record-row">
+
+                    <div class="record-label">
+                        12:15
+                    </div>
+
+                    <div>
+                        Further clinical review documented.
+                    </div>
+
+                </div>
+
+
+                <div class="record-row">
+
+                    <div class="record-label">
+                        14:00
+                    </div>
+
+                    <div>
+                        Patient transferred for further assessment.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="record-note">
+
+            <strong>Notice what this record gives us.</strong>
+
+            <p>
+                It gives us times, events and documented decisions.
+                It begins to establish a chronology.
+            </p>
+
+            <p>
+                But it does not necessarily answer every question.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>4. What the Record Does Not Automatically Tell You</h2>
+
+        <p>
+            A medical record may document an event without explaining
+            everything that happened around it.
+        </p>
+
+        <p>
+            An entry stating that a patient was reviewed does not necessarily
+            tell us everything that was considered during that review.
+        </p>
+
+        <p>
+            Similarly, the absence of a documented event does not automatically
+            establish that the event did not occur.
+        </p>
+
+        <p>
+            The practitioner must therefore distinguish between:
+        </p>
+
+        <ul>
+
+            <li>
+                what the record expressly records;
+            </li>
+
+            <li>
+                what can reasonably be inferred from the record;
+            </li>
+
+            <li>
+                what remains uncertain; and
+            </li>
+
+            <li>
+                what requires confirmation from another source.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <section id="investigation">
+
+        <h2>5. Interrogating the Record</h2>
+
+        <p>
+            The purpose of reading the record is not merely to summarise it.
+            The practitioner must begin asking questions.
+        </p>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 1 — Timing</strong>
+
+            <p>
+                What happened first, and how much time passed before the
+                next clinical decision?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 2 — Knowledge</strong>
+
+            <p>
+                What information appears to have been available to the
+                practitioner at the relevant time?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 3 — Response</strong>
+
+            <p>
+                What action followed the patient's symptoms, observations
+                or investigation results?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 4 — Gaps</strong>
+
+            <p>
+                Are there periods where the record becomes silent despite
+                clinically significant events?
+            </p>
+
+        </div>
+
+
+        <div class="investigation-question">
+
+            <strong>Question 5 — Consistency</strong>
+
+            <p>
+                Does the record agree with the patient's account,
+                other documents and later evidence?
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>6. The Record and the Patient's Story</h2>
+
+        <p>
+            The medical record should not automatically replace the patient's
+            account.
+        </p>
+
+        <p>
+            Nor should the patient's account automatically override the
+            documentary record.
+        </p>
+
+        <p>
+            The practitioner should compare the different sources of
+            information and identify where they agree, where they conflict,
+            and what further evidence may resolve the conflict.
+        </p>
+
+        <div class="principle">
+
+            <strong>
+                The record is one part of the evidentiary story.
+            </strong>
+
+            <br><br>
+
+            Its value increases when it is placed alongside the patient's
+            account, witness evidence, expert evidence and other documents.
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>7. The Beginning of the Medical Chronology</h2>
+
+        <p>
+            One of the first practical uses of the medical record is to
+            construct a chronology.
+        </p>
+
+        <p>
+            At this stage, the chronology should remain factual.
+            The practitioner should resist the temptation to insert the
+            legal conclusion before the underlying events have been tested.
+        </p>
+
+        <div class="checklist">
+
+            <strong>Record each significant event:</strong>
+
+            <ul>
+
+                <li>Date and time</li>
+
+                <li>Patient's condition</li>
+
+                <li>Relevant observation or investigation</li>
+
+                <li>Practitioner's assessment</li>
+
+                <li>Decision made</li>
+
+                <li>Action taken</li>
+
+                <li>Change in condition</li>
+
+                <li>Next clinical response</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>8. The Practitioner Test</h2>
+
+        <p>
+            Before moving to the individual components of the medical record,
+            ask:
+        </p>
+
+        <div class="principle">
+
+            <strong>
+                Can I reconstruct what happened from the documents I have,
+                identify what remains uncertain, and explain what additional
+                evidence I need?
+            </strong>
+
+        </div>
+
+        <p>
+            If the answer is no, the investigation is not yet complete.
+        </p>
+
+    </section>
+
+
+    <section class="case-law">
+
+        <h2>Legal and Evidentiary Note</h2>
+
+        <p>
+            The medical record should be approached as documentary evidence
+            within the broader evidentiary framework of the case.
+            Its contents must be considered together with the surrounding
+            evidence and the legal questions that ultimately have to be
+            proved.
+        </p>
+
+        <p>
+            Later chapters will examine particular categories of records
+            and the questions that arise from them.
+        </p>
+
+    </section>
+
+
+    <nav class="chapter-navigation">
+
+        <a href="../index.html">
+            ← Back to Book 3
+        </a>
+
+        <a href="admission-record.html">
+            Next: Chapter 2 — The Admission Record →
+        </a>
+
+    </nav>
+
+</main>
+
+
+<footer class="site-footer">
+
+    Medical Negligence Practitioner Library
+
+</footer>
+
+
+</body>
+</html>
+```
