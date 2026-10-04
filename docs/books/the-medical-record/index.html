@@ -1,95 +1,248 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Book 3 — The Medical Record</title>
+    <title>The Medical Record | Medical Negligence Practitioner Library</title>
 
-    <link rel="stylesheet" href="../../css/book.css">
+    <style>
+        :root {
+            --navy: #17233c;
+            --purple: #5b4b8a;
+            --paper: #f7f4ef;
+            --white: #ffffff;
+            --text: #252525;
+            --muted: #6d6d6d;
+            --line: #ddd7cf;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.8;
+        }
+
+        .book-cover {
+            background: var(--navy);
+            color: white;
+            padding: 70px 25px 65px;
+            text-align: center;
+        }
+
+        .book-number {
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.75;
+            margin-bottom: 20px;
+        }
+
+        .book-cover h1 {
+            max-width: 850px;
+            margin: 0 auto 15px;
+            font-size: 44px;
+            line-height: 1.2;
+        }
+
+        .book-subtitle {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 21px;
+            opacity: 0.9;
+        }
+
+        .book-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 55px 25px 80px;
+        }
+
+        .section {
+            background: var(--white);
+            padding: 35px;
+            margin-bottom: 30px;
+            border: 1px solid var(--line);
+        }
+
+        h2 {
+            color: var(--navy);
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        h3 {
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+
+        .principle {
+            border-left: 5px solid var(--purple);
+            background: #f0edf7;
+            padding: 22px 25px;
+            margin: 30px 0;
+            font-size: 19px;
+        }
+
+        .book-purpose {
+            font-size: 20px;
+        }
+
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0 0;
+        }
+
+        .chapter-list li {
+            border-top: 1px solid var(--line);
+        }
+
+        .chapter-list li:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .chapter-list a {
+            display: block;
+            padding: 20px 10px;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 19px;
+        }
+
+        .chapter-list a:hover {
+            background: #f4f1ec;
+            color: var(--purple);
+        }
+
+        .chapter-number {
+            display: inline-block;
+            width: 55px;
+            color: var(--purple);
+            font-weight: bold;
+        }
+
+        .closing {
+            text-align: center;
+            font-size: 20px;
+            padding: 25px 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--purple);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .site-footer {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 650px) {
+            .book-cover {
+                padding: 50px 20px;
+            }
+
+            .book-cover h1 {
+                font-size: 34px;
+            }
+
+            .book-subtitle {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="site-header">
-    <div class="book-label">BOOK 3</div>
+<header class="book-cover">
+
+    <div class="book-number">Book 3</div>
 
     <h1>The Medical Record</h1>
 
-    <p>
-        Reading, reconstructing and interrogating the clinical record
+    <p class="book-subtitle">
+        Reading, Reconstructing and Interrogating the Clinical Record
     </p>
+
 </header>
 
 
-<main class="book-content">
+<main class="book-container">
 
-    <section class="principle">
+    <section class="section">
 
-        <strong>Practitioner Principle</strong>
+        <h2>The Starting Point</h2>
 
-        <p>
-            The medical record is not merely a collection of documents.
-            It is the evidentiary story of what was known, what was done,
-            what was not done, and when those things occurred.
-        </p>
-
-    </section>
-
-
-    <section>
-
-        <h2>The Medical Record as Evidence</h2>
-
-        <p>
-            In medical negligence litigation, the medical record often
-            provides the foundation from which the clinical chronology,
-            decision-making, standard of care and causation are investigated.
+        <p class="book-purpose">
+            The medical record is often the evidentiary foundation of a
+            medical-negligence investigation.
         </p>
 
         <p>
-            But a record should not simply be read from beginning to end.
-            It should be interrogated.
+            It records what was documented about the patient's condition,
+            what practitioners observed, what decisions were made, what
+            treatment was provided, and how the patient's condition changed
+            over time.
         </p>
 
-        <p>
-            The practitioner must learn to identify what each entry says,
-            what it does not say, how entries relate to one another, and
-            whether the documentary record is consistent with the patient's
-            account and the available expert evidence.
-        </p>
+        <div class="principle">
+
+            <strong>Practitioner's Principle</strong><br><br>
+
+            Do not merely read the medical record.
+            Reconstruct the clinical story from it, test what it reveals,
+            and identify what it leaves unanswered.
+
+        </div>
 
     </section>
 
 
     <section class="section">
 
-        <h2>Reading the Record in Practice</h2>
+        <h2>What This Book Is About</h2>
 
         <p>
-            This book uses reconstructed medical records to demonstrate
-            how a practitioner can move from documentation to analysis.
+            Book 1 began with the patient's story.
+            Book 2 tested whether the emerging claim could properly proceed.
         </p>
 
-        <div class="checklist">
+        <p>
+            Book 3 turns to the documentary evidence that may confirm,
+            contradict or complicate that story.
+        </p>
 
-            <p>
-                <strong>Look for:</strong>
-            </p>
+        <p>
+            The practitioner will learn how to read different parts of the
+            medical record, reconstruct the chronology, identify gaps and
+            inconsistencies, and connect the documentary evidence to the
+            questions of negligence and causation.
+        </p>
 
-            <ul>
-                <li>What happened?</li>
-                <li>When did it happen?</li>
-                <li>Who knew about it?</li>
-                <li>What decision was made?</li>
-                <li>What action followed?</li>
-                <li>Was the patient monitored?</li>
-                <li>Was deterioration recognised?</li>
-                <li>Was escalation required?</li>
-                <li>Are there contradictions or gaps?</li>
-            </ul>
-
-        </div>
+        <p>
+            The book will also use reconstructed medical records to demonstrate
+            how these documents should be interrogated in practice.
+        </p>
 
     </section>
 
@@ -181,7 +334,7 @@
 
         <p>
             The question is not simply:
-            <em>“What does the record say?”</em>
+            <em>“What does the medical record say?”</em>
         </p>
 
         <p>
@@ -191,8 +344,9 @@
         <div class="principle">
 
             <strong>
-                “What does the record allow us to prove, what does it
-                leave unanswered, and what further evidence is required?”
+                “What does the record allow us to establish,
+                what does it leave unanswered, and what further evidence
+                is required?”
             </strong>
 
         </div>
@@ -204,7 +358,8 @@
 
         <p>
             <strong>
-                Read the record. Reconstruct the events. Test the decisions.
+                Read the record. Reconstruct the events.
+                Test the decisions.
             </strong>
         </p>
 
@@ -221,5 +376,7 @@
     Medical Negligence Practitioner Library
 </footer>
 
+
 </body>
 </html>
+```
