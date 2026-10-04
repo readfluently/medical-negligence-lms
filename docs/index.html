@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Medical Negligence Practitioner Guide</title>
+    <title>Medical Negligence Practitioner Library</title>
 
     <style>
         body {
@@ -18,64 +18,102 @@
         header {
             background: #24113f;
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 38px;
+            font-size: 40px;
         }
 
         header p {
             font-size: 18px;
-            margin-top: 10px;
+            margin-top: 12px;
             opacity: 0.9;
         }
 
         main {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 45px auto;
             padding: 0 20px;
         }
 
         .welcome {
             background: white;
             padding: 30px;
-            border-radius: 12px;
+            border-radius: 14px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 35px;
         }
 
         h2 {
             color: #24113f;
         }
 
-        .chapter {
+        .library {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .book {
             display: block;
             background: white;
-            margin: 15px 0;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 28px;
+            border-radius: 14px;
             text-decoration: none;
             color: #222;
-            border-left: 5px solid #7b3fb6;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            border-top: 7px solid #7b3fb6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: 0.2s;
         }
 
-        .chapter:hover {
-            transform: translateX(5px);
+        .book:hover {
+            transform: translateY(-5px);
             background: #faf7ff;
         }
 
-        .chapter strong {
-            color: #6a2ca0;
-            font-size: 18px;
+        .book-cover {
+            background: #24113f;
+            color: white;
+            min-height: 180px;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .book-cover .number {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            margin-bottom: 12px;
+        }
+
+        .book-cover h3 {
+            margin: 0;
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+        .book p {
+            margin-bottom: 0;
+            color: #555;
+        }
+
+        .coming-soon {
+            opacity: 0.65;
+            border-top-color: #aaa;
         }
 
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 45px 20px;
             color: #666;
         }
     </style>
@@ -84,8 +122,8 @@
 <body>
 
 <header>
-    <h1>Medical Negligence Practitioner Guide</h1>
-    <p>An interactive legal-practitioner learning book</p>
+    <h1>Medical Negligence Practitioner Library</h1>
+    <p>An interactive legal-practitioner learning library</p>
 </header>
 
 <main>
@@ -94,69 +132,183 @@
         <h2>Welcome</h2>
 
         <p>
-            This guide is designed to help practitioners investigate
-            medical-negligence matters systematically, beginning with
-            the first consultation.
+            This library is designed to help practitioners investigate
+            medical-negligence matters systematically, from the first
+            consultation through to litigation.
         </p>
 
         <p>
             The central principle is simple:
             <strong>investigate the story before deciding the case.</strong>
         </p>
+    </section>
 
-        <h2>Book Chapters</h2>
+    <h2>Books</h2>
 
-        <a class="chapter" href="chapters/first-consultation.html">
-            <strong>Chapter 1 — The First Consultation</strong><br>
-            What you are really trying to build from the first meeting.
+    <section class="library">
+
+        <a class="book" href="books/first-consultation/index.html">
+
+            <div class="book-cover">
+                <div class="number">Book 1</div>
+
+                <h3>
+                    The Client Walks Into Your Office
+                </h3>
+            </div>
+
+            <strong>First Consultation and Initial Investigation</strong>
+
+            <p>
+                Starting with the client's story and building the
+                factual foundation of a potential medical-negligence claim.
+            </p>
+
         </a>
 
-        <a class="chapter" href="chapters/medical-chronology.html">
-            <strong>The Medical Chronology</strong><br>
-            Building the timeline of treatment and events.
+
+        <a class="book" href="books/before-you-sue/index.html">
+
+            <div class="book-cover">
+                <div class="number">Book 2</div>
+
+                <h3>
+                    Before You Sue
+                </h3>
+            </div>
+
+            <strong>The Architecture of a Medical Negligence Claim</strong>
+
+            <p>
+                Testing whether the investigation produces a legally
+                sustainable case before litigation is commenced.
+            </p>
+
         </a>
 
-        <a class="chapter" href="chapters/clinical-decisions.html">
-            <strong>The Sequence of Clinical Decisions</strong><br>
-            Understanding what happened and when decisions were made.
-        </a>
 
-        <a class="chapter" href="chapters/injury.html">
-            <strong>The Development of the Injury</strong><br>
-            Tracing the patient's condition through the clinical story.
-        </a>
+        <div class="book coming-soon">
 
-        <a class="chapter" href="chapters/causation.html">
-            <strong>Causation</strong><br>
-            Connecting the alleged departure from proper care to the injury.
-        </a>
+            <div class="book-cover">
+                <div class="number">Book 3</div>
 
-        <a class="chapter" href="chapters/prescription.html">
-            <strong>Prescription</strong><br>
-            Identifying time-related legal issues.
-        </a>
+                <h3>
+                    The Medical Record
+                </h3>
+            </div>
 
-        <a class="chapter" href="chapters/statutory-notice.html">
-            <strong>Statutory Notice</strong><br>
-            Considering notice requirements in claims involving organs of state.
-        </a>
+            <strong>Coming Soon</strong>
 
-        <a class="chapter" href="chapters/procedural-steps.html">
-            <strong>Procedural Steps</strong><br>
-            Mapping the litigation and investigation process.
-        </a>
+            <p>
+                Reading, analysing and using the medical record as evidence.
+            </p>
 
-        <a class="chapter" href="chapters/expert-opinions.html">
-            <strong>Expert Opinions</strong><br>
-            Identifying the specialised questions that require expert evidence.
-        </a>
+        </div>
+
+
+        <div class="book coming-soon">
+
+            <div class="book-cover">
+                <div class="number">Book 4</div>
+
+                <h3>
+                    Choosing the Experts
+                </h3>
+            </div>
+
+            <strong>Coming Soon</strong>
+
+            <p>
+                Identifying the right expert and formulating the questions
+                that expert evidence must answer.
+            </p>
+
+        </div>
+
+
+        <div class="book coming-soon">
+
+            <div class="book-cover">
+                <div class="number">Book 5</div>
+
+                <h3>
+                    Causation
+                </h3>
+            </div>
+
+            <strong>Coming Soon</strong>
+
+            <p>
+                Moving from an alleged departure from proper care to the
+                injury and loss claimed.
+            </p>
+
+        </div>
+
+
+        <div class="book coming-soon">
+
+            <div class="book-cover">
+                <div class="number">Book 6</div>
+
+                <h3>
+                    Building the Claim
+                </h3>
+            </div>
+
+            <strong>Coming Soon</strong>
+
+            <p>
+                Turning the investigation into a coherent legal case.
+            </p>
+
+        </div>
+
+
+        <div class="book coming-soon">
+
+            <div class="book-cover">
+                <div class="number">Book 7</div>
+
+                <h3>
+                    Litigation
+                </h3>
+            </div>
+
+            <strong>Coming Soon</strong>
+
+            <p>
+                Taking the medical-negligence case through the litigation
+                process.
+            </p>
+
+        </div>
+
+
+        <div class="book coming-soon">
+
+            <div class="book-cover">
+                <div class="number">Book 8</div>
+
+                <h3>
+                    The Medical Negligence Casebook
+                </h3>
+            </div>
+
+            <strong>Coming Soon</strong>
+
+            <p>
+                Cases, principles, practitioner exercises and applied learning.
+            </p>
+
+        </div>
 
     </section>
 
 </main>
 
 <footer>
-    Medical Negligence Practitioner Guide
+    Medical Negligence Practitioner Library
 </footer>
 
 </body>
